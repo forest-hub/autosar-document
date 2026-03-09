@@ -1,0 +1,2680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RELEASE-NOTES schemaVersion="1.0">
+  <COMPONENT deliverable="RTA-OS">
+    <VERSION value="12.6.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.6.0/1</ISSUE>
+        <TITLE>Modification 12.6.0/1</TITLE>
+        <DESCRIPTION>Command line option &apos;--dll_include&apos; can be used to specify locations to search for custom code generator DLLs.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.6.0/2</ISSUE>
+        <TITLE>Modification 12.6.0/2</TITLE>
+        <DESCRIPTION>The Ioc.h file will include Os.h automatically if it has not already been included.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.6.0/3</ISSUE>
+        <TITLE>Modification 12.6.0/3</TITLE>
+        <DESCRIPTION>Clarify that Os_Cbk_SetMemoryAccess is only called in Scalability Classes 3 and 4. Non-trusted code can be configured in any Scalability class.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.6.0/4</ISSUE>
+        <TITLE>Modification 12.6.0/4</TITLE>
+        <DESCRIPTION>Enhanced checking of OS APIs that are allowed in cross-core IOC callbacks. Only APIs that are legal from an idle context are allowed when Service Protection is enabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Removal">
+        <ISSUE>12.6.0/5</ISSUE>
+        <TITLE>Modification 12.6.0/5</TITLE>
+        <DESCRIPTION>The ETAS Licensing Manager installer is no longer packaged with the RTA-OS installer. It can be downloaded separately from the ETAS website.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 773231</ISSUE>
+        <TITLE>Incompatible target options in ARXML</TITLE>
+        <DESCRIPTION>When migrating a configuration from one target type to another, it was possible for target options from the original target to be partly interpreted by the new target and cause unexpected output. The OS now rejects target options that are not applicable to the new target.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 774624</ISSUE>
+        <TITLE>Memory sections are not generated fully in Os_BSWMD when using custom DLL</TITLE>
+        <DESCRIPTION>When a customer was using their Custom DLL code generator, not all of the newly created MemMap sections get reflected into the OS BSWMD file.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 777444</ISSUE>
+        <TITLE>Leaving Tasks/ISRs without releasing a spinlock might prevent further spinlocks from being taken, resulting in an error notification and invalid behavior.</TITLE>
+        <DESCRIPTION>The OS now correctly cleans up unreleased spinlocks with predecessors when a TASK or ISR terminates without explicitly releasing them.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="12.4.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.4.0/1</ISSUE>
+        <TITLE>Modification 12.4.0/1</TITLE>
+        <DESCRIPTION>Adds support for AUTOSAR 4.9.0 (R23-11).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/2</ISSUE>
+        <TITLE>Modification 12.4.0/2</TITLE>
+        <DESCRIPTION>Data in grids in the RTA-OS GUI will now sort numerically when the contents are integers.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/3</ISSUE>
+        <TITLE>Modification 12.4.0/3</TITLE>
+        <DESCRIPTION>The RTA-OS tools have been updated to use .NET8 instead of .NET6 internally.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/4</ISSUE>
+        <TITLE>Modification 12.4.0/4</TITLE>
+        <DESCRIPTION>The RTAOSGen GUI no longer leaves a console window open when it starts.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/5</ISSUE>
+        <TITLE>Modification 12.4.0/5</TITLE>
+        <DESCRIPTION>Integer values in the incoming XML can use the full unsigned 64-bit range. Checks are made that values do not exceed the capability of relevant compilation types.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/6</ISSUE>
+        <TITLE>Modification 12.4.0/6</TITLE>
+        <DESCRIPTION>The documentation is updated to remove StartupHook as a callable context for StartScheduleTableAbs, StartScheduleTableRel, SetAbsAlarm, SetRelAlarm, SetScheduleTableAsync, StartScheduleTableSynchron and SyncScheduleTable.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.4.0/7</ISSUE>
+        <TITLE>Modification 12.4.0/7</TITLE>
+        <DESCRIPTION>The documentation for the &apos;Optimize for core-local memory&apos; option is updated to explain that this is a performance improvement but it is still necessary for the data to be globally accessible by other cores.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 761940</ISSUE>
+        <TITLE>Possible build fail in IOC generation for receivers without IDs</TITLE>
+        <DESCRIPTION>If an IOC communication had multiple receivers without separate IDs, the build could fail if some but not all contained a receiver callback.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 762144</ISSUE>
+        <TITLE>IOC cross-core ReceiverPullCB potentially use a wrong trusted function index when --ioc:impl is used.</TITLE>
+        <DESCRIPTION>This could occur when some communications with Rx callbacks were single-core and others cross-core</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="12.3.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.3.0/1</ISSUE>
+        <TITLE>Modification 12.3.0/1</TITLE>
+        <DESCRIPTION>If an IOC Receive callback belongs to the same OS Application as the sender, its invocation will be optimized to a direct function call.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.3.0/2</ISSUE>
+        <TITLE>Modification 12.3.0/2</TITLE>
+        <DESCRIPTION>BSWMD content is modified so that it contains IOC sections even when they have no run-time content.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.3.0/3</ISSUE>
+        <TITLE>Modification 12.3.0/3</TITLE>
+        <DESCRIPTION>Command line option &apos;--ar_version:?&apos; can be used to list the supported AUTOSAR versions.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.3.0/4</ISSUE>
+        <TITLE>Modification 12.3.0/4</TITLE>
+        <DESCRIPTION>A new SPDX format SBOM report has been added that describes the tools and target version that was used to generate the RTA-OS code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.3.0/5</ISSUE>
+        <TITLE>Modification 12.3.0/5</TITLE>
+        <DESCRIPTION>When the OS option &apos;IOC Code&apos; is set to &apos;CallerApp&apos;, memory sections used for IOC APIs default to the form ..._SEC_CODE_{app}.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.3.0/6</ISSUE>
+        <TITLE>Modification 12.3.0/6</TITLE>
+        <DESCRIPTION>The MAKW used for RTE IOC Rx callbacks matches that used by the TrustedFunction that calls it. Previously, unless a MemoryMappingCodeLocationRef was specified, it could differ.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 745951</ISSUE>
+        <TITLE>The --samples command-line option only worked with the overwrite modifier.</TITLE>
+        <DESCRIPTION>The code tried to emit the Os_MemMap.h sample file twice. The tool would complain about the second save unless overwrite was specified.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 740668</ISSUE>
+        <TITLE>Compilation error in TerminateApplication.c</TITLE>
+        <DESCRIPTION>It was possible to see a compile error saying that a function was declared but never referenced in TerminateApplication.c. This would only appear in configurations where there were shared TASK priorities, TerminateApplication was allowed and the OS-Applications which could be terminated did not use shared priorities.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 748219</ISSUE>
+        <TITLE>Possible compile fail with OS option &quot;Always clear OS data&quot; and IOC.</TITLE>
+        <DESCRIPTION>With OS Option &apos;Always clear OS data&apos; set to TRUE, it was possible for some of the declarations for IOC data to get omitted from the output files. This would result in a compile failure.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="12.2.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.2.0/1</ISSUE>
+        <TITLE>Modification 12.2.0/1</TITLE>
+        <DESCRIPTION>Adds support for AUTOSAR 4.8.0 (R22-11).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.2.0/2</ISSUE>
+        <TITLE>Modification 12.2.0/2</TITLE>
+        <DESCRIPTION>Linux versions of the command-line tools are packaged in the RTA-OS installer. </DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.2.0/3</ISSUE>
+        <TITLE>Modification 12.2.0/3</TITLE>
+        <DESCRIPTION>MemoryMappingCodeLocationRef is supported on Alarm callbacks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.2.0/4</ISSUE>
+        <TITLE>Modification 12.2.0/4</TITLE>
+        <DESCRIPTION>New OS option &apos;IOC Spinlocks&apos; is added to control how the IOC allocates its cross-core spinlocks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/5</ISSUE>
+        <TITLE>Modification 12.2.0/5</TITLE>
+        <DESCRIPTION>Unless configured with a MemoryMappingCodeLocationRef element, TASKs are put in the memory section CODE_(TaskName).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/6</ISSUE>
+        <TITLE>Modification 12.2.0/6</TITLE>
+        <DESCRIPTION>Unless configured with a MemoryMappingCodeLocationRef element, Category 2 ISRs are put in the memory section CODE_(IsrName).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/7</ISSUE>
+        <TITLE>Modification 12.2.0/7</TITLE>
+        <DESCRIPTION>When the OS option &apos;IOC Code&apos; is not set to &apos;Caller&apos;, memory sections used for IOC APIs follow the specification for R21-11 (OS_(IE)_START_SEC_CODE).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/8</ISSUE>
+        <TITLE>Modification 12.2.0/8</TITLE>
+        <DESCRIPTION>All MAKW defines used for the MemMap mechanism are forced to be upper case.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/9</ISSUE>
+        <TITLE>Modification 12.2.0/9</TITLE>
+        <DESCRIPTION>Duplicate entries in the sample header file &apos;Os_MemMap.h&apos; have been removed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/10</ISSUE>
+        <TITLE>Modification 12.2.0/10</TITLE>
+        <DESCRIPTION>IOC Rx callbacks are placed in the memory section of the relevant OS Application.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/11</ISSUE>
+        <TITLE>Modification 12.2.0/11</TITLE>
+        <DESCRIPTION>IOC inline macros add parenthesis around the value parameter.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/12</ISSUE>
+        <TITLE>Modification 12.2.0/12</TITLE>
+        <DESCRIPTION>StartNonAutosarCore is documented as being optional. It is removed in the AUTOSAR R22-11 specification, but remains in the RTA-OS code for backwards compatibility.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/13</ISSUE>
+        <TITLE>Modification 12.2.0/13</TITLE>
+        <DESCRIPTION>The sample header file &apos;Platform_Types.h&apos; modifies the definition of Boolean when it recognizes that the compiler is C99 compliant.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/14</ISSUE>
+        <TITLE>Modification 12.2.0/14</TITLE>
+        <DESCRIPTION>The OS GUI Project Properties dialog now correctly reports the AUTOSAR version of projects that have been read in.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/15</ISSUE>
+        <TITLE>Modification 12.2.0/15</TITLE>
+        <DESCRIPTION>The OS GUI copes properly with screen size changes.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/16</ISSUE>
+        <TITLE>Modification 12.2.0/16</TITLE>
+        <DESCRIPTION>The Schedule Table Assistant in the OS GUI preserves all other Schedule Table settings when regenerating expiry points.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/17</ISSUE>
+        <TITLE>Modification 12.2.0/17</TITLE>
+        <DESCRIPTION>The tools now accept malformed input ARXML where target options are missing a VALUE element.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/18</ISSUE>
+        <TITLE>Modification 12.2.0/18</TITLE>
+        <DESCRIPTION>GetApplicationState, TryToGetSpinlock, ReadPeripheral8, ReadPeripheral16 and ReadPeripheral32 now return E_OS_ILLEGAL_ADDRESS if an out parameter references an invalid address (EXTENDED mode).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/19</ISSUE>
+        <TITLE>Modification 12.2.0/19</TITLE>
+        <DESCRIPTION>Fix for PPCe200 targets allow them to compile correctly in systems with over 31 TASK events.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/20</ISSUE>
+        <TITLE>Modification 12.2.0/20</TITLE>
+        <DESCRIPTION>Fix for some PPCe200 targets that might fail to compile unless ORTI was enabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.2.0/21</ISSUE>
+        <TITLE>Modification 12.2.0/21</TITLE>
+        <DESCRIPTION>Fix for possible compilation error on some targets when using more than 32 OS-Applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 714993</ISSUE>
+        <TITLE>TerminateApplication does not fully terminate a task if it has multiple activations.</TITLE>
+        <DESCRIPTION>If a task had multiple queued activations, TerminateApplication would only terminate one instance of the task and any queued activations would still run.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 714994</ISSUE>
+        <TITLE>REENTRANCY-LEVEL element in BSWMD should only appear for some AUTOSAR version.</TITLE>
+        <DESCRIPTION>The BSWMD report emitted a REENTRANCY-LEVEL element for all AUTOSAR versions. It now only emits it for versions 4.1.1 onwards.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 721495</ISSUE>
+        <TITLE>A spurious resource configuration error could be reported.</TITLE>
+        <DESCRIPTION>This only happened on systems with a single OS-Application and resources on a non-master core.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="12.1.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.1.0/1</ISSUE>
+        <TITLE>Modification 12.1.0/1</TITLE>
+        <DESCRIPTION>Adds support for AUTOSAR 4.7.0 (R21-11).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.1.0/2</ISSUE>
+        <TITLE>Modification 12.1.0/2</TITLE>
+        <DESCRIPTION>MemoryMappingCodeLocationRef is supported on OS-Application. This provides a default MemMap code location for Hooks, TrustedFunctions, Tasks and ISRs that belong to the OS-Application.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.1.0/3</ISSUE>
+        <TITLE>Modification 12.1.0/3</TITLE>
+        <DESCRIPTION>MemoryMappingCodeLocationRef is supported on TrustedFunction (not editable in RTAOSCfg). This means that trusted functions can be located in individually configured MemMap sections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.1.0/4</ISSUE>
+        <TITLE>Modification 12.1.0/4</TITLE>
+        <DESCRIPTION>The IOC command line option --ioc:impl can be given an optional namespace by using the form --ioc:[ns]impl.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.1.0/5</ISSUE>
+        <TITLE>Modification 12.1.0/5</TITLE>
+        <DESCRIPTION>Minor documentation updates.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 700030</ISSUE>
+        <TITLE>Possible imbalance of MemMap START_SEC/STOP_SEC in Os_Cfg.c.</TITLE>
+        <DESCRIPTION>A change was added in 6.2.200 that means that it is possible for an OS_START_SEC_CONST_UNSPECIFIED to get omitted in Os_Cfg.c. This only happens in systems with no OS Resources, so a workaround is to create a dummy resource.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 702246</ISSUE>
+        <TITLE>CallTrustedFunction returns E_OS_ACCESS in STANDARD status.</TITLE>
+        <DESCRIPTION>The RTA-OS documentation says that E_OS_ACCESS should only be emitted in EXTENDED status, matching the AUTOSAR specification. The OS code no longer checks for E_OS_ACCESS in STANDARD status.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 702504</ISSUE>
+        <TITLE>RTA-OS 12.0.0 GUI does not open reports.</TITLE>
+        <DESCRIPTION>The Reports and Help-Documentation menu items in RTAOSCfg do not display the relevant documents. Reports do get generated on disk, but they do not get shown.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 703145</ISSUE>
+        <TITLE>RTA-OS 12.0.0 GUI does not start correctly on some PCs.</TITLE>
+        <DESCRIPTION>The GUI might fault during startup on non-English locale PCs. The workaround is to switch temporarily to an English locale.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 708975</ISSUE>
+        <TITLE>IOC reads for communications with ReceiverIDs might omit a read spinlock.</TITLE>
+        <DESCRIPTION>In a multicore IOC system, if the receivers were using ReceiverIDs then the OS was treating the read as for single core. It then omitted a read spinlock on non-atomic communications, so a reader might read while the writer was updating the same data.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="12.0.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.0.0/1</ISSUE>
+        <TITLE>Modification 12.0.0/1</TITLE>
+        <DESCRIPTION>The OS tools are based on .NET 6 technology. This replaces the .NET framework technology used previously. Do not install this version over the top of earlier versions. The names of the command-line and GUI tools have been modified to RTAOSGen.exe and RTAOSCfg.exe.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.0.0/2</ISSUE>
+        <TITLE>Modification 12.0.0/2</TITLE>
+        <DESCRIPTION>The Reference Guide now lists those OS APIs that can be called from Os_Cbk_Idle().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.0.0/3</ISSUE>
+        <TITLE>Modification 12.0.0/3</TITLE>
+        <DESCRIPTION>The MemMap section for Os_const_tasks0 has been adjusted to add _LOCAL in the single-core case for relevant AUTOSAR versions.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.0.0/4</ISSUE>
+        <TITLE>Modification 12.0.0/4</TITLE>
+        <DESCRIPTION>An error is raised if --ioc:impl and --ioc:stub are used at the same time.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>12.0.0/5</ISSUE>
+        <TITLE>Modification 12.0.0/5</TITLE>
+        <DESCRIPTION>The IOC initialization is optimized to use the memory clear function Os_ioc_memclr instead of individual assignments (may depend on target). Os_ioc_memclr has the same features as Os_ioc_memcpy.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.0.0/6</ISSUE>
+        <TITLE>Modification 12.0.0/6</TITLE>
+        <DESCRIPTION>There is a new &apos;Release Note&apos; report that can be used to generate a machine-readable release note that contains information from both the OS Tools and the Target Port.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.0.0/7</ISSUE>
+        <TITLE>Modification 12.0.0/7</TITLE>
+        <DESCRIPTION>When the OS option &apos;IOC Atomic Copy Size&apos; is active, the OS is able to take input from 2 optional files. The files should contain the names of IOC communications, one per line. Any communication in the ioc_atomic_exclude.txt file is excluded from the optimization. Any communication in the ioc_atomic_include.txt file is included in the optimization (regardless of its size). RTA-OS looks for the files in the &apos;project&apos; directory - which is likely to be the directory containing the first .arxml or .rtaos file passed to RTAOSGen.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>12.0.0/8</ISSUE>
+        <TITLE>Modification 12.0.0/8</TITLE>
+        <DESCRIPTION>The IOC Summary Report has been updated to show the reason for inlining optimizations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 694630</ISSUE>
+        <TITLE>Possible compilation failure using --ioc:impl option.</TITLE>
+        <DESCRIPTION>In cases where the IOC used trusted functions to implement callbacks, there might be a compile error in --ioc:impl mode if the configuration specified that these functions should be implemented in the memory section of the owning OS Application.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 695076</ISSUE>
+        <TITLE>Too many cross-core trusted function calls in --ioc:impl mode.</TITLE>
+        <DESCRIPTION>In cases where the IOC uses trusted functions to implement cross-core callbacks, the cross-core check code might attempt to run functions on the wrong cores (in addition to running them on the correct ones). The faulty calls can be expected to be rejected (E_OS_ACCESS) but they will waste execution time.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 695544</ISSUE>
+        <TITLE>RTA-OS BSWMD Report fails with --ioc:impl mode.</TITLE>
+        <DESCRIPTION>The RTA-OS tool would fail if the BSWMD report was requested in a build where --ioc:impl mode was also selected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 696513</ISSUE>
+        <TITLE>Task activation count was limited to 255.</TITLE>
+        <DESCRIPTION>The number of activations per task was limited to 255, but is now 4294967295.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.2.200">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/1</ISSUE>
+        <TITLE>Modification 6.2.200/1</TITLE>
+        <DESCRIPTION>Remove the possible double reporting of the error message &apos;Status must be EXTENDED in SC3 or SC4&apos;</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/2</ISSUE>
+        <TITLE>Modification 6.2.200/2</TITLE>
+        <DESCRIPTION>IOC internal data declarations emitted are in size order - largest first - to try to minimize fragmentation</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/3</ISSUE>
+        <TITLE>Modification 6.2.200/3</TITLE>
+        <DESCRIPTION>TrustedFunctions are declared in the MemMap section of the owning OS App</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/4</ISSUE>
+        <TITLE>Modification 6.2.200/4</TITLE>
+        <DESCRIPTION>Range checking for peripheral access APIs considers both start and end range</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/5</ISSUE>
+        <TITLE>Modification 6.2.200/5</TITLE>
+        <DESCRIPTION>Os_PeripheralAddressType size fixed at &apos;large integer&apos; size</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/6</ISSUE>
+        <TITLE>Modification 6.2.200/6</TITLE>
+        <DESCRIPTION>Core-specific task constants are placed in per-code memory sections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/7</ISSUE>
+        <TITLE>Modification 6.2.200/7</TITLE>
+        <DESCRIPTION>Corrected documentation example for Os_Cbk_SetMemoryAccess.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/8</ISSUE>
+        <TITLE>Modification 6.2.200/8</TITLE>
+        <DESCRIPTION>Documentation for GetElapsedValue shows that it can return E_OS_VALUE.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.200/9</ISSUE>
+        <TITLE>Modification 6.2.200/9</TITLE>
+        <DESCRIPTION>Documentation for GetActiveApplicationMode states that it may be called before StartOS().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 674918</ISSUE>
+        <TITLE>Compilation fails on targets that support Enhanced Isolation without selecting full Memory Protection.</TITLE>
+        <DESCRIPTION>The OS now forces full memory protection to be used whenever Enhanced Isolation is selected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 674921</ISSUE>
+        <TITLE>Multi-core initialization to INVALID_OSAPPLICATION with AUTOSAR version 4.5+.</TITLE>
+        <DESCRIPTION>It was possible for one of the OS-internal variables to skip initialization to INVALID_OSAPPLICATION in some multi-core configurations. This was only an issue when the INVALID_OSAPPLICATION value was non-zero, as specified for AUTOSAR 4.5+. For a workaround the OS option &apos;ApplicationType starts at zero&apos; could be set to FALSE.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 674927</ISSUE>
+        <TITLE>IOC compilation failure with array types smaller than &quot;IOC Atomic Copy Size&quot;</TITLE>
+        <DESCRIPTION>Array types are now excluded from the &quot;IOC Atomic Copy Size&quot; optimization. The C language does not suppport array assignment copies.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 675636</ISSUE>
+        <TITLE>Possible compilation failure connected to OS-Application Error Hooks</TITLE>
+        <DESCRIPTION>On some targets using stack realignment and per OS-Application Error Hooks, a compilation error might occur in configurations where not all untrusted or Trusted-With-Protection OS-Applications enabled the Error Hook.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 680886</ISSUE>
+        <TITLE>IOC ReceiverIDs not respected in Optimized IOC mode.</TITLE>
+        <DESCRIPTION>IOC ReceiverIDs operate correctly in AUTOSAR IOC mode, but not when the IOC Optimization mode is enabled. The code has been updated so that ReceiverIDs work in both modes.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 677325</ISSUE>
+        <TITLE>Error in BSWMD for Os_TimingFaultDetected element</TITLE>
+        <DESCRIPTION>BSWMD EXECUTION-CONTEXT for Os_TimingFaultDetected changed from CAT1 to INTERRUPT-CAT-1</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 683412</ISSUE>
+        <TITLE>Possible lockup in GUI build page</TITLE>
+        <DESCRIPTION>The GUI could lock up if an odd number of quote characters were entered manually in the build command line.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 683413</ISSUE>
+        <TITLE>Possible GUI fault loading ARXML</TITLE>
+        <DESCRIPTION>The GUI would show a fault dialog changing the target device if OsRTATargetName was missing from the originally loaded ARXML configuration.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 685538</ISSUE>
+        <TITLE>Incorrect reference paths in VSMD files</TITLE>
+        <DESCRIPTION>ETAS extensions to AUTOSAR ECUC file content are described in the VSMD files that ship with RTA-OS. The files for some versions of the VSMD files had incorrect references, and these are now fixed.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.2.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/1</ISSUE>
+        <TITLE>Modification 6.2.0/1</TITLE>
+        <DESCRIPTION>Avoid emitting the same warning or error message more than once.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/2</ISSUE>
+        <TITLE>Modification 6.2.0/2</TITLE>
+        <DESCRIPTION>Adds support for AUTOSAR 4.6.0 (R20-11).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/3</ISSUE>
+        <TITLE>Modification 6.2.0/3</TITLE>
+        <DESCRIPTION>Up to 63 events are supported per TASK. Previously 32.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/4</ISSUE>
+        <TITLE>Modification 6.2.0/4</TITLE>
+        <DESCRIPTION>Added note that only documented OS APIs are considered to be public. Functions and data in OS header files that are not documented should not be used in non-OS code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/5</ISSUE>
+        <TITLE>Modification 6.2.0/5</TITLE>
+        <DESCRIPTION>GetTaskActivationTime now returns E_OS_ILLEGAL_ADDRESS if Value references an invalid address (EXTENDED mode).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/6</ISSUE>
+        <TITLE>Modification 6.2.0/6</TITLE>
+        <DESCRIPTION>Checking for cross-core notifications is faster and is moved to core-local code where appropriate.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/7</ISSUE>
+        <TITLE>Modification 6.2.0/7</TITLE>
+        <DESCRIPTION>Added OS option &apos;-{}-incremental&apos;. File saves will not overwrite an existing file if its contents are identical.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/8</ISSUE>
+        <TITLE>Modification 6.2.0/8</TITLE>
+        <DESCRIPTION>Improved Configuration Summary content. Includes RESOURCE core assignments and OS object indexes.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/9</ISSUE>
+        <TITLE>Modification 6.2.0/9</TITLE>
+        <DESCRIPTION>Improved IOC Summary content. Includes supplied IOC configuration options.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/10</ISSUE>
+        <TITLE>Modification 6.2.0/10</TITLE>
+        <DESCRIPTION>The implementation of the OS_TASKTYPE_TO_INDEX and OS_ISRTYPE_TO_INDEX macros have been changed to avoid MISRA warnings in customer code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/11</ISSUE>
+        <TITLE>Modification 6.2.0/11</TITLE>
+        <DESCRIPTION>Allow selection of options &apos;core-local data&apos; and &apos;always clear OS data&apos; at the same time. Previously this could cause compilation to fail.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/12</ISSUE>
+        <TITLE>Modification 6.2.0/12</TITLE>
+        <DESCRIPTION>Do not use VAR() in declaration of structure members. e.g. terminate_jump_buf in Os_TaskDynType.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/13</ISSUE>
+        <TITLE>Modification 6.2.0/13</TITLE>
+        <DESCRIPTION>Do not use FUNC() in typedefs. e.g. Os_CounterStartType.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/14</ISSUE>
+        <TITLE>Modification 6.2.0/14</TITLE>
+        <DESCRIPTION>The default implementation of the TASK and ISR macros can be changed by predefining them before Os.h. (May be useful in some tests.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/15</ISSUE>
+        <TITLE>Modification 6.2.0/15</TITLE>
+        <DESCRIPTION>An extra interrupt lock is added to SuspendOSInterrupts() to protect against a possible race condition if it is called by Category 1 ISRs. (Category 1 ISRs never need to call SuspendOSInterrupts() because they already run at a high interrupt priority.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/16</ISSUE>
+        <TITLE>Modification 6.2.0/16</TITLE>
+        <DESCRIPTION>The file Os_ScheduleQ.c is omitted from the OS library unless needed because the &apos;Optimize Schedule()&apos; option is TRUE.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/17</ISSUE>
+        <TITLE>Modification 6.2.0/17</TITLE>
+        <DESCRIPTION>The OS variable Os_lock_apperrorhook is only declared when it is used in the library.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/18</ISSUE>
+        <TITLE>Modification 6.2.0/18</TITLE>
+        <DESCRIPTION>Documentation is updated to state that E_OS_MISSINGEND can be emitted in STANDARD mode for TerminateTask().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/19</ISSUE>
+        <TITLE>Modification 6.2.0/19</TITLE>
+        <DESCRIPTION>Documentation is updated to state that GetAlarm only returns E_OS_ILLEGAL_ADDRESS in EXTENDED mode.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/20</ISSUE>
+        <TITLE>Modification 6.2.0/20</TITLE>
+        <DESCRIPTION>Documentation is updated to add a caution in StartScheduleTableRel() usage.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/21</ISSUE>
+        <TITLE>Modification 6.2.0/21</TITLE>
+        <DESCRIPTION>Documentation is updated to add a note in CallTrustedFunction() related to timing protection.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/22</ISSUE>
+        <TITLE>Modification 6.2.0/22</TITLE>
+        <DESCRIPTION>Changed messages and reports from the OS library to use the spelling OS-Application (with the hyphen) more consistently.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/23</ISSUE>
+        <TITLE>Modification 6.2.0/23</TITLE>
+        <DESCRIPTION>ORTI files contain correct TASK references in single-core targets.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/24</ISSUE>
+        <TITLE>Modification 6.2.0/24</TITLE>
+        <DESCRIPTION>Corrected the schemaLocation in BSWMD reports for AUTOSAR versions 4.3.1 onwards.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/25</ISSUE>
+        <TITLE>Modification 6.2.0/25</TITLE>
+        <DESCRIPTION>Added memory sections in BSWMD report that were previously omitted because they were local to individual C files.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/26</ISSUE>
+        <TITLE>Modification 6.2.0/26</TITLE>
+        <DESCRIPTION>Some IOC messages have changed from warnings to information.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/27</ISSUE>
+        <TITLE>Modification 6.2.0/27</TITLE>
+        <DESCRIPTION>The OS will not emit warnings for trusted functions created by RTA-OS to support IOC code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.2.0/28</ISSUE>
+        <TITLE>Modification 6.2.0/28</TITLE>
+        <DESCRIPTION>Initialization of the IOC is faster for cases where there are many cross-core notifications.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/29</ISSUE>
+        <TITLE>Modification 6.2.0/29</TITLE>
+        <DESCRIPTION>OS options &apos;Omit Default Implementations&apos; and &apos;Omit Default IOC copy&apos; can be used to omit the default implementation of Os_ioc_memcpy from the library.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/30</ISSUE>
+        <TITLE>Modification 6.2.0/30</TITLE>
+        <DESCRIPTION>OS options &apos;Omit Default Implementations&apos; and &apos;Omit Default IOC clear&apos; can be used to omit the default implementation of Os_ioc_memcclr from the library.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/31</ISSUE>
+        <TITLE>Modification 6.2.0/31</TITLE>
+        <DESCRIPTION>OS option &apos;IOC Atomic Copy Size&apos; has been added to support (rare) cases where the compiler can emit code that will atomically copy values larger than integer size.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/32</ISSUE>
+        <TITLE>Modification 6.2.0/32</TITLE>
+        <DESCRIPTION>Adds support for IOC ReceiverId that was included in AUTOSAR R20-11.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.2.0/33</ISSUE>
+        <TITLE>Modification 6.2.0/33</TITLE>
+        <DESCRIPTION>The IOC API function IocInit() is added. It does not have to be called by user code. The OS will correctly initialize the IOC.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 666885</ISSUE>
+        <TITLE>Compilation fails on targets that support Enhanced Isolation if the Single Memory Protection Zone is selected.</TITLE>
+        <DESCRIPTION>Selecting Single Memory Protection Zone would remove one of the C types needed to support the Enhanced Isolation code.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.1.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.3/1</ISSUE>
+        <TITLE>Modification 6.1.3/1</TITLE>
+        <DESCRIPTION>As 64 bit versions of the tools are used by default, equivalent 32 bit versions are provided for compatibility with older PCs. These are named rtaosgen32.exe and rtaoscfg32.exe.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.3/2</ISSUE>
+        <TITLE>Modification 6.1.3/2</TITLE>
+        <DESCRIPTION>The ORTI Api ID is correctly now reset on exit from TerminateTask(). Previously it only got reset in error cases.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.3/3</ISSUE>
+        <TITLE>Modification 6.1.3/3</TITLE>
+        <DESCRIPTION>An unnecessary IOC warning has been removed. The warning saying that a sender has the same OS-Application as a receiver is no longer emitted if there are multiple senders because that is a valid use-case.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 658926</ISSUE>
+        <TITLE>RTA-OS GUI choice of XSD when creating a new project.</TITLE>
+        <DESCRIPTION>When using the GUI to create a new project, the schemaLocation in the first line did not use the updated AUTOSAR schema ending 00044, 00046 and 00048 for AUTOSAR versions 4.3.1, 4.4.0 and 4.5.0 respectively. This has been corrected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 658934</ISSUE>
+        <TITLE>GUI support for editing OsIsrPeriod and OsTaskPeriod</TITLE>
+        <DESCRIPTION>These were added in AUTOSAR 4.5.0 for use by the RTE. The OS does not use them. The RTA-OS GUI now provides support to configure them.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 654189</ISSUE>
+        <TITLE>ApplicationType and value of INVALID_OSAPPLICATION</TITLE>
+        <DESCRIPTION>AUTOSAR version 4.5.0 (19-11) requires ApplicationType to start at 0 and INVALID_OSAPPLICATION to be above the range of valid ApplicationTypes. RTA-OS has previously used 0 for INVALID_OSAPPLICATION. To avoid breaking existing code, the new OS option &apos;ApplicationType starts at zero&apos; should be used if you want this behavior.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 658935</ISSUE>
+        <TITLE>MemoryStartAddressType definition change.</TITLE>
+        <DESCRIPTION>AUTOSAR version 4.5.0 (19-11) requires MemoryStartAddressType to be of type void *. RTA-OS has previously used uint8 * because that makes it easy to add a MemorySizeType to it. Adding MemorySizeType to a void * is not possible without a cast in portable C. To avoid breaking existing code, the new OS option &apos;MemoryStartAddressType as void pointer&apos; should be used if you want MemoryStartAddressType to be of type void *.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.1.2">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.2/1</ISSUE>
+        <TITLE>Modification 6.1.2/1</TITLE>
+        <DESCRIPTION>The engine used in the OS tools to generate the OS code has been updated. Code generation will be faster on current versions of Windows.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.2/2</ISSUE>
+        <TITLE>Modification 6.1.2/2</TITLE>
+        <DESCRIPTION>Internal support has been added to support parallelization of compilation (where possible). Future target ports will need to be updated to take advantage of this.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.2/3</ISSUE>
+        <TITLE>Modification 6.1.2/3</TITLE>
+        <DESCRIPTION>64 bit versions of the tools are used by default. These can access more memory so can cope with bigger input configurations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.2/4</ISSUE>
+        <TITLE>Modification 6.1.2/4</TITLE>
+        <DESCRIPTION>The tools no longer need .NET 3.5 to be installed on the host PC, provided that version 4.7 or above of the .NET Framework is present. (Note that Windows 10 version 1511 and lower cannot install 4.7 so will need .NET 35 support.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.2/5</ISSUE>
+        <TITLE>Modification 6.1.2/5</TITLE>
+        <DESCRIPTION>Minor adjustment in character escaping in the XML and HTML versions of the Options Report.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.2/6</ISSUE>
+        <TITLE>Modification 6.1.2/6</TITLE>
+        <DESCRIPTION>VSMD files have been updated and excess information has been removed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 655022</ISSUE>
+        <TITLE>BSWMD report did not include IOC-generated memory sections.</TITLE>
+        <DESCRIPTION>Sections created as part of IOC generation are now included.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 658291</ISSUE>
+        <TITLE>Possible fault in generation of OS_INDEX_FOR_{CAT2-ISR-NAME}</TITLE>
+        <DESCRIPTION>In the case where a Category 1 and Category 2 ISR share the same priority, the value of OS_INDEX_FOR_{CAT2-ISR-NAME} would be wrong if the name of the Category 1 ISR was alphabetically earlier.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 658315</ISSUE>
+        <TITLE>Optimized IOC generation crash with unexpected input.</TITLE>
+        <DESCRIPTION>The code generation could fail with an IOC configuration containing an OsIocWriteGroup without any OsIocWriteGroupParams (no data to transfer). The generation now succeeds and a warning is emitted.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.1.1">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.1/1</ISSUE>
+        <TITLE>Modification 6.1.1/1</TITLE>
+        <DESCRIPTION>The example code in the documentation for AdvanceCounter was corrected (State.Delay =&gt; State-&gt;Delay).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.1/2</ISSUE>
+        <TITLE>Modification 6.1.1/2</TITLE>
+        <DESCRIPTION>The documentation for the hardware counter callback Os_Cbk_State_() was updated to reflect how it is currently used.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.1/3</ISSUE>
+        <TITLE>Modification 6.1.1/3</TITLE>
+        <DESCRIPTION>Parts of the the RTA-OS tooling have been updated to use more recent releases of the .NET Framework. The tools now use .Net version 4.7.2. Experimental 64-bit versions of rtaosgen and rtaoscfg are provided, but RTA-OS targets need to be updated before they will be recognized by these tools.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 650908</ISSUE>
+        <TITLE>Possible compilation error when a hardware counter is attached only to alarms that set events.</TITLE>
+        <DESCRIPTION>In a multi-core system, some compilers could report an error in systems with hardware counters that only had event-setting alarms attached.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 647895</ISSUE>
+        <TITLE>Issues in BSWMD file</TITLE>
+        <DESCRIPTION>In some configurations variable and constants could get emitted as if they were in CODE memory sections. There was also a capitalization error in ResConsumption.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 650575</ISSUE>
+        <TITLE>IOC declaration for ReceiverPullCB might be in wrong memory section.</TITLE>
+        <DESCRIPTION>In IOC configurations with receive callbacks and OS option &apos;ioc_code&apos; set to &apos;Caller&apos; the extern for the trusted function did not move to the caller&apos;s memory section.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 651205</ISSUE>
+        <TITLE>RTA-OS GUI fails to display Application CoreRef in cases where the CoreRef was previously undefined.</TITLE>
+        <DESCRIPTION>When the GUI created a new CoreRef entry for an OS Application, it would not correctly update the UI to show it. The reference was stored in the ARXML, so saving the file and reloading would correct the issue. Also there was a slight error in the reference definition for the added CoreRef.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 651424</ISSUE>
+        <TITLE>Compilation error in CallTrustedFunction.c with -{}-ioc:stub option.</TITLE>
+        <DESCRIPTION>There could be a compilation error in CallTrustedFunction.c for some targets when using the -{}-ioc:stub command-line option if the configuration did not include some trusted functions. Note that this fix has not been tested on all previously released target versions, so for completeness you should ensure that your testing adequately checks the correct operation of trusted functions if you use the -{}-ioc:stub configuration.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.1.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/1</ISSUE>
+        <TITLE>Modification 6.1.0/1</TITLE>
+        <DESCRIPTION>Support has been added for AUTOSAR 4.5.0 (AUTOSAR R19-11).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/2</ISSUE>
+        <TITLE>Modification 6.1.0/2</TITLE>
+        <DESCRIPTION>It has been noted that TASKs in real-world full-stack AUTOSAR systems are often not written in such a way that they can safely cope with being terminated part way through execution. If the OS sees that the configuration relates to a full-stack AUTOSAR system it will remove the ability to terminate part-completed tasks unless you set the OS option &apos;Allow forced TASK terminations&apos; to TRUE to confirm that this is safe to do. This means that errors such as timing budget overruns will result in shutdown or controlled reset of the ECU rather than task terminations. This replaces &apos;Allow RTE TASK terminations&apos;.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/3</ISSUE>
+        <TITLE>Modification 6.1.0/3</TITLE>
+        <DESCRIPTION>The OS option &apos;Always clear OS data&apos; has been added so that any OS data normally placed in NO_INIT memory sections is moved to CLEARED memory sections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/4</ISSUE>
+        <TITLE>Modification 6.1.0/4</TITLE>
+        <DESCRIPTION>Added E_OS_SYS_ERROR_LIMIT to mark limit of expected StatusType values.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/5</ISSUE>
+        <TITLE>Modification 6.1.0/5</TITLE>
+        <DESCRIPTION>Os.h can be #included directly in C++ files for compilation. Note that not all target ports are currently compatible with C++ compilation.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/6</ISSUE>
+        <TITLE>Modification 6.1.0/6</TITLE>
+        <DESCRIPTION>The TYPE-EMITTER value in an IMPLEMENTATION-DATA-TYPE is used to determine which header files to include in Ioc.h.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/7</ISSUE>
+        <TITLE>Modification 6.1.0/7</TITLE>
+        <DESCRIPTION>OS Option &apos;Task Termination Hook&apos; can be used to cause Os_Cbk_TaskTerminated(TaskID) to get called at Task termination.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/8</ISSUE>
+        <TITLE>Modification 6.1.0/8</TITLE>
+        <DESCRIPTION>The command-line option &apos;-{}-ar_version:x.y.z&apos; has been added to rtaosgen.exe to specify the active AUTOSAR version. This overrides the version seen in the ARXML configuration.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/9</ISSUE>
+        <TITLE>Modification 6.1.0/9</TITLE>
+        <DESCRIPTION>A sample file has been added to help show how to specify core IDs in AUTOSAR 4.2 and above. Use option -{}-samples:[EcucCoreDefinition].</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.1.0/10</ISSUE>
+        <TITLE>Modification 6.1.0/10</TITLE>
+        <DESCRIPTION>The name and version of the target port get output in the rtaosgen signon message.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/11</ISSUE>
+        <TITLE>Modification 6.1.0/11</TITLE>
+        <DESCRIPTION>Removed an unnecessary precautionary check in ActivateTask for multicore systems without crosscore activations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/12</ISSUE>
+        <TITLE>Modification 6.1.0/12</TITLE>
+        <DESCRIPTION>CheckObjectAccess did not detect being passed INVALID_OSAPPLICATION.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/13</ISSUE>
+        <TITLE>Modification 6.1.0/13</TITLE>
+        <DESCRIPTION>StartCore did not need to check for non-OS cores when all cores are OS cores.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/14</ISSUE>
+        <TITLE>Modification 6.1.0/14</TITLE>
+        <DESCRIPTION>StartNonAutosarCore code eliminated when all cores are OS cores.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/15</ISSUE>
+        <TITLE>Modification 6.1.0/15</TITLE>
+        <DESCRIPTION>Other small optimizations in cases where there are no Non-Autosar cores.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/16</ISSUE>
+        <TITLE>Modification 6.1.0/16</TITLE>
+        <DESCRIPTION>Some E_OS_ACCESS checks eliminated in systems where Applications cannot be terminated.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/17</ISSUE>
+        <TITLE>Modification 6.1.0/17</TITLE>
+        <DESCRIPTION>GetVersionInfo could only be accessed as Os_GetVersionInfo.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/18</ISSUE>
+        <TITLE>Modification 6.1.0/18</TITLE>
+        <DESCRIPTION>Speed/memory optimization for the generation of ScheduleTables with expiries that set many Events.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/19</ISSUE>
+        <TITLE>Modification 6.1.0/19</TITLE>
+        <DESCRIPTION>MISRA report refactored for speed. Especially relevant for systems with many MemMap sections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/20</ISSUE>
+        <TITLE>Modification 6.1.0/20</TITLE>
+        <DESCRIPTION>Eliminated a compiler warning in IOC stub mode for fully trusted systems.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/21</ISSUE>
+        <TITLE>Modification 6.1.0/21</TITLE>
+        <DESCRIPTION>Eliminated a compiler warning relating to pointers to const psets that was seen on some compilers when there were more than 32 tasks on a core.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/22</ISSUE>
+        <TITLE>Modification 6.1.0/22</TITLE>
+        <DESCRIPTION>RTA-OS GUI IOC Summary Report can now be run without rebuilding the ECU.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/23</ISSUE>
+        <TITLE>Modification 6.1.0/23</TITLE>
+        <DESCRIPTION>Error E_OS_CORE can be passed to ErrorHook if an Alarm or ScheduleTable tries to activate a Task on a core that is in shutdown.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/24</ISSUE>
+        <TITLE>Modification 6.1.0/24</TITLE>
+        <DESCRIPTION>Error E_OS_ACCESS can be passed to ErrorHook if an Alarm or ScheduleTable tries to activate a Task on belonging to an OsApplication that is not accessible.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/25</ISSUE>
+        <TITLE>Modification 6.1.0/25</TITLE>
+        <DESCRIPTION>The Address field of ApplicationContext argument in the Os_Cbk_SetMemoryAccess callback now always contains the starting stack value. Previously it was zero unless StackMonitoring was enabled. (Note that the Size field will still be zero unless StackMonitoring is enabled.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/26</ISSUE>
+        <TITLE>Modification 6.1.0/26</TITLE>
+        <DESCRIPTION>The adjustment of the MemMap section names based on the AUTOSAR version is modified slightly to be more AUTOSAR compliant.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/27</ISSUE>
+        <TITLE>Modification 6.1.0/27</TITLE>
+        <DESCRIPTION>The Os_BSWMD.arxml report has been enhanced based on customer feedback.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/28</ISSUE>
+        <TITLE>Modification 6.1.0/28</TITLE>
+        <DESCRIPTION>Parts of the the RTA-OS tooling have been updated to use more recent releases of the .NET Framework. The tools now use .Net version 4.5.2.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/29</ISSUE>
+        <TITLE>Modification 6.1.0/29</TITLE>
+        <DESCRIPTION>The version of the ETAS License Manager that is provided has been updated to v1.8.0.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.1.0/30</ISSUE>
+        <TITLE>Modification 6.1.0/30</TITLE>
+        <DESCRIPTION>The definition of RUNNINGTASK in the ORTI file has been corrected in single-core configurations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 639138</ISSUE>
+        <TITLE>Possible compilation warning in 6.0.0</TITLE>
+        <DESCRIPTION>In configurations that prevent forced task terminations there might be a compiler warning in ProtectionSupport.c because the the local variable &apos;Application&apos; was initialized but not used. Depending on compiler options this might be interpreted as a compilation failure.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 641560</ISSUE>
+        <TITLE>Possible compilation error when a software counter is attached only to alarms that set events.</TITLE>
+        <DESCRIPTION>In a multi-core system, some compilers could report an error in systems with software counters that only had event-setting alarms attached.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 637422</ISSUE>
+        <TITLE>Race condition when using SuspendOSInterrupts in a CAT1 ISR</TITLE>
+        <DESCRIPTION>If a CAT1 ISR preempted the SuspendOSInterrupts API at a particular point, and then itself called SuspendOSInterrupts, it was possible for it to disrupt the final call to ResumeOSInterrupts such that the interrupt priority would not be restored. Although there is no reason for a Category 1 interrupt to call SuspendOSInterrupts, AUTOSAR allows it. The code is now modified when there are CAT1 ISRs in the configuration so that this issue cannot occur.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="6.0.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.0.0/1</ISSUE>
+        <TITLE>Modification 6.0.0/1</TITLE>
+        <DESCRIPTION>Small refinements and corrections to the preview IOC code in 5.91.0.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>6.0.0/2</ISSUE>
+        <TITLE>Modification 6.0.0/2</TITLE>
+        <DESCRIPTION>Split internal Ioc.c file into two files to reduce memory requirements during code generation.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>6.0.0/3</ISSUE>
+        <TITLE>Modification 6.0.0/3</TITLE>
+        <DESCRIPTION>RTA-RTE does not support termination of its tasks part way through execution. If the OS sees that the configuration contains RTE-related information it will now remove the ability to terminate part-completed tasks unless the OS option &apos;Allow RTE TASK terminations&apos; is set to TRUE. This means that errors such as timing budget overruns will result in shutdown or controlled reset of the ECU.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 636262</ISSUE>
+        <TITLE>Possible deadlock in IOC</TITLE>
+        <DESCRIPTION>There was a small race condition where preemption of an IOC write by higher priority IOC-accessing code might result in a spinlock-related deadlock. The issue only applied when preempting an IOC write where there was a cross-core callback function that was triggered by the write and the data type was primitive and unqueued.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.91.1">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.1/1</ISSUE>
+        <TITLE>Modification 5.91.1/1</TITLE>
+        <DESCRIPTION>MemMap sections containing the text &apos;CODE_LIB&apos; are changed to contain the text &apos;CODE&apos; for AUTOSAR versions 4.1 and above.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.1/2</ISSUE>
+        <TITLE>Modification 5.91.1/2</TITLE>
+        <DESCRIPTION>The MemMap &apos;{CN}_CODE&apos; callout style introduced for AUTOSAR version 4.1 is kept to 4.1 only. It is removed from 4.2 and above. The MappingCodeLocation feature can be used for callouts above version 4.1.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.1/3</ISSUE>
+        <TITLE>Modification 5.91.1/3</TITLE>
+        <DESCRIPTION>MemMap sections containing the text &apos;COREn_CODE&apos; or &apos;COREn_CODE_LIB&apos; are changed to contain the &apos;COREn&apos; part at the end.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.1/4</ISSUE>
+        <TITLE>Modification 5.91.1/4</TITLE>
+        <DESCRIPTION>MemMap sections containing the text &apos;COREn&apos; have the additional modifier &apos;_LOCAL&apos; added at the end for AUTOSAR 4.3 versions and above.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.91.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.0/1</ISSUE>
+        <TITLE>Modification 5.91.0/1</TITLE>
+        <DESCRIPTION>When OS option &apos;IOC Data&apos; is set to &apos;Writer&apos; the IOC code can optimize communications containing data types are copyable atomically - e.g. uint32. Fewer interrupt locks will be taken and some calls may become inlinable macros.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.0/2</ISSUE>
+        <TITLE>Modification 5.91.0/2</TITLE>
+        <DESCRIPTION>The implementation for IOC queued communications has been changed to remove the need for interrupt and cross-core locks to manage the queue data. When OS option &apos;IOC Data&apos; is set to &apos;Writer&apos; some queue control data is assigned to the writer&apos;s OS Application and some to the reader&apos;s.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.0/3</ISSUE>
+        <TITLE>Modification 5.91.0/3</TITLE>
+        <DESCRIPTION>To support the removal of locking in IOC queues, IOCEmptyQueue_xxx APIs are now specified such that they should not be called if corresponding read/writes could occur at the same time.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.0/4</ISSUE>
+        <TITLE>Modification 5.91.0/4</TITLE>
+        <DESCRIPTION>The AUTOSAR TotalNumberOfCores value has been reimplemented as Os_TotalNumberOfCores so that all OS data starts with an Os_ prefix. A macro TotalNumberOfCores maps on to Os_TotalNumberOfCores so no code changes are needed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.91.0/5</ISSUE>
+        <TITLE>Modification 5.91.0/5</TITLE>
+        <DESCRIPTION>Some explanations in MISRA reports have been updated for clarity.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.91.0/6</ISSUE>
+        <TITLE>Modification 5.91.0/6</TITLE>
+        <DESCRIPTION>VSMD files can be created for specific versions of OS and target plugins. This is primarily to support ETAS ISOLAR tooling.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 626361</ISSUE>
+        <TITLE>Incorrect return from Os_GetCurrentTPL()</TITLE>
+        <DESCRIPTION>The return value from Os_GetCurrentTPL() did not take account of the raising of the task priority when a resource lock was in effect. It could also produce incorrect results in systems with shared task priorities.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 627128</ISSUE>
+        <TITLE>Possible RES_SCHEDULER failure in multicore systems</TITLE>
+        <DESCRIPTION>In systems with a mixture of AUTOSAR and non-AUTOSAR cores, locking RES_SCHEDULER (when enabled) would fail on any AUTOSAR core that had an ID greater than any non-AUTOSAR core.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.7.3">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.7.3/1</ISSUE>
+        <TITLE>Modification 5.7.3/1</TITLE>
+        <DESCRIPTION>No changes since 5.7.2 preview.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.7.2">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 623346</ISSUE>
+        <TITLE>Compilation error with -{}-ioc:impl</TITLE>
+        <DESCRIPTION>In multicore systems with cross-core IOC Rx callbacks, the code in Ioc.c could fail to compile or, depending on the compiler, call an illegal function.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.7.1">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 622904</ISSUE>
+        <TITLE>Incorrect re-initialization of some OS data during a warm reset.</TITLE>
+        <DESCRIPTION>The OS-internal Os_AnyCoreInfo data structure that is used in multi-core systems was in a &apos;NO INIT&apos; memory section but should have been in a &apos;CLEARED&apos; memory section. It would normally be cleared correctly on a first-time reset by the C startup code but in systems with a warm reset capability it was not getting reinitialized to zero.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 623635</ISSUE>
+        <TITLE>Incorrect scheduling with ECC2 tasks and cross-core SetEvent.</TITLE>
+        <DESCRIPTION>If SetEvent was called for an ECC2 task on a different core at the point that it was entering the Waiting state, the dispatcher could try to start an erroneous task.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 623907</ISSUE>
+        <TITLE>No autostarted Alarms or ScheduleTables when ServiceProtection configured.</TITLE>
+        <DESCRIPTION>The checks of caller legality were getting wrongly applied in the OS startup code, causing autostarted Alarms and ScheduleTables to get rejected.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.7.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.7.0/1</ISSUE>
+        <TITLE>Modification 5.7.0/1</TITLE>
+        <DESCRIPTION>The macro OS_INDEX_FOR_{taskname} has been added. This can be useful in switch/case statements.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.7.0/2</ISSUE>
+        <TITLE>Modification 5.7.0/2</TITLE>
+        <DESCRIPTION>The macro OS_INDEX_FOR_{isrname} has been added. This can be useful in switch/case statements.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.7.0/3</ISSUE>
+        <TITLE>Modification 5.7.0/3</TITLE>
+        <DESCRIPTION>Allows time intervals to be used in the Schedule Table Assistant GUI.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.7.0/4</ISSUE>
+        <TITLE>Modification 5.7.0/4</TITLE>
+        <DESCRIPTION>The definition of RUNNINGTASK in the ORTI file has been modified slightly in multi-core configurations to make it easier for debuggers to support TOTRACE operation.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 621257</ISSUE>
+        <TITLE>Possible compilation error in a Custom DLL</TITLE>
+        <DESCRIPTION>In a customer-specific DLL it was possible to see a compilation error in some situations unless ORTI generation was enabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.90">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.90/1</ISSUE>
+        <TITLE>Modification 5.6.90/1</TITLE>
+        <DESCRIPTION>SetRelAlarm and SetAbsAlarm will return E_OS_CALLEVEL if Service Protection is enabled and they are called from Startup Hook. This is to conform to the AUTOSAR specification.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.90/2</ISSUE>
+        <TITLE>Modification 5.6.90/2</TITLE>
+        <DESCRIPTION>Much larger IOC MCSD files can be processed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.90/3</ISSUE>
+        <TITLE>Modification 5.6.90/3</TITLE>
+        <DESCRIPTION>Support has been added for AUTOSAR 4.4.0, including the APIs ActivateTaskAsyn and SetEventAsyn. Note that OS option &apos;Support ActivateTaskAsyn and SetEventAsyn&apos; has to be used to enable them.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.90/4</ISSUE>
+        <TITLE>Modification 5.6.90/4</TITLE>
+        <DESCRIPTION>Where there is ECUC partition information present in the ARXML configuration, the RTA-OS GUI allows OS Applications to select the partition that they relate to.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.90/5</ISSUE>
+        <TITLE>Modification 5.6.90/5</TITLE>
+        <DESCRIPTION>MEMORY-SECTION information has been added to the Os_BSWMD.arxml report.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.90/6</ISSUE>
+        <TITLE>Modification 5.6.90/6</TITLE>
+        <DESCRIPTION>Added new OS option &apos;Omit Default Implementations&apos;. RTA-OS normally provides default implementations for Os_Cbk_Idle, Os_Cbk_InShutdown and Os_Cbk_StackOverrunHook in the generated library. This option can be used to omit these functions from the library.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 616116</ISSUE>
+        <TITLE>XML identifiers containing underscores</TITLE>
+        <DESCRIPTION>For AUTOSAR versions 4.0.x to 4.2.1, identifiers in ARXML were not allowed to have 2 consecutive underscores. However from 4.2.2 they are allowed. RTA-OS previously did not allow 2 consecutive underscores in version 4.2.2 and above.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 617003</ISSUE>
+        <TITLE>Incorrect XML references created when adding objects in the RTA-OS GUI.</TITLE>
+        <DESCRIPTION>The tooling could use the path to a non-OS ECUC-MODULE-DEF element if one appeared in a later ARXML file.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 619930</ISSUE>
+        <TITLE>Incorrect handling of some references in optimized IOC ReadGroup and WriteGroup containers.</TITLE>
+        <DESCRIPTION>The decoding of references to ReceiverProperties and SenderProperties previously assumed unique SHORTNAMEs. The decoding now correctly uses the full path name, so duplicate SHORTNAMEs can be used.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 615868</ISSUE>
+        <TITLE>Task continuing to run after TerminateApplication</TITLE>
+        <DESCRIPTION>TerminateApplication might fail to fully terminate lower priority tasks if a cross-core activated tasks was already running on the terminating core.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.4">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 605608</ISSUE>
+        <TITLE>Custom DLL options show in the RTA-OS GUI even when the Custom DLL is NOT activated.</TITLE>
+        <DESCRIPTION>Fixed. These options now only appear when the Custom DLL is activated.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 606702</ISSUE>
+        <TITLE>Compilation failure in IocStubs.c.</TITLE>
+        <DESCRIPTION>The code in IocStubs.c would not compile in the case where option -{}-ioc:impl was selected and there was an Rx Callback for a communication that was single core.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 606708</ISSUE>
+        <TITLE>IOC MCSD file processing was slow.</TITLE>
+        <DESCRIPTION>On large input files, the MSCD file processing was inefficient. This has been corrected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 608082</ISSUE>
+        <TITLE>Incorrect MPU handling with ECC tasks when using Trusted-With-Protection.</TITLE>
+        <DESCRIPTION>The MPU was not being switched out on entry to the code that dispatched ECC tasks. This has been corrected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 608594</ISSUE>
+        <TITLE>Sequential TerminateApplication calls might fail</TITLE>
+        <DESCRIPTION>Where application code called TerminateApplication for several different OS Applications in sequence, calls after the first would fail with E_OS_CALLEVEL if Service Protection was enabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.3/1</ISSUE>
+        <TITLE>Modification 5.6.3/1</TITLE>
+        <DESCRIPTION>Information about interrupt vectors and  target variants has been added to the Options Reference report</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.3/2</ISSUE>
+        <TITLE>Modification 5.6.3/2</TITLE>
+        <DESCRIPTION>In the OS GUI rtaoscfg, the interrupt addresses input field in OS Configuration / ISRs / General can have part of the name entered and it will suggest entries that contain this text. This is intended to help select interrupts more easily on larger processors.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.3/3</ISSUE>
+        <TITLE>Modification 5.6.3/3</TITLE>
+        <DESCRIPTION>Removed duplicated line &apos;Os_AppOverride = INVALID_OSAPPLICATION;&apos; that could occur in StartOS.c and ShutdownOS.c depending on configuration. No functional change.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.3/4</ISSUE>
+        <TITLE>Modification 5.6.3/4</TITLE>
+        <DESCRIPTION>Removed duplicated line &apos;Os_AppAccess = 1U;&apos; that could occur in StartOS.c depending on configuration. No functional change.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 598729</ISSUE>
+        <TITLE>Possible failure in cross-core SetRelAlarm</TITLE>
+        <DESCRIPTION>Where a software counter has a maximum value less than 0xffffffff, calling SetRelAlarm from a core different from the one running the counter could result in the alarm match time being set to a value that would never be reached. Workaround: Use full modulus counter or use SetAbsAlarm.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 602306</ISSUE>
+        <TITLE>Possible code loop with hardware counters</TITLE>
+        <DESCRIPTION>The OS-internal function Os_HwQFlush might execute an infinite loop in systems with more than one hardware counter.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 602612</ISSUE>
+        <TITLE>GetTaskID not always callable from Os_Cbk_CheckStackDepth</TITLE>
+        <DESCRIPTION>With ServiceProtection turned on, calling GetTaskID() from within the Os_Cbk_CheckStackDepth callback would be refused if the callback was raised for an autostarted task.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 596758</ISSUE>
+        <TITLE>Tools reject ARXML files that do not include OS container</TITLE>
+        <DESCRIPTION>Tools warn about input ARXML files that do not include OS container, but allow them now. This is because in some cases they might contain references to data that is needed to complete the configuration; typically core assignments.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 604120</ISSUE>
+        <TITLE>Possible compilation failure with Enhanced Isolation</TITLE>
+        <DESCRIPTION>On some targets there could be a compile error in TerminateApplication.c because the variable &apos;calling_application&apos; was declared but not used in some configurations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 604121</ISSUE>
+        <TITLE>Possible compilation failure in cross-core interrupts with metrics enabled</TITLE>
+        <DESCRIPTION>On some targets there could be a compile error in cross-core interrupt code. A variable was declared but not used in some configurations.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.2">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.2/1</ISSUE>
+        <TITLE>Modification 5.6.2/1</TITLE>
+        <DESCRIPTION>Update ETAS address in About dialogs and documentation.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/1</ISSUE>
+        <TITLE>Modification 5.6.1/1</TITLE>
+        <DESCRIPTION>Supports C28xTI target port (16-bit chars).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/2</ISSUE>
+        <TITLE>Modification 5.6.1/2</TITLE>
+        <DESCRIPTION>Reports missing data references in IOC Data Properties as an error.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/3</ISSUE>
+        <TITLE>Modification 5.6.1/3</TITLE>
+        <DESCRIPTION>Schema and VSMD (ParamDef) added for AUTOSAR 4.3.1.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/4</ISSUE>
+        <TITLE>Modification 5.6.1/4</TITLE>
+        <DESCRIPTION>Support reading non UTF8 MCSD files (IOC)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/5</ISSUE>
+        <TITLE>Modification 5.6.1/5</TITLE>
+        <DESCRIPTION>MemoryMappingCodeLocationRef is supported on Hooks, OsApplication Hooks, Tasks and ISRs. This means that these objects can be located in individually configured MemMap sections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/6</ISSUE>
+        <TITLE>Modification 5.6.1/6</TITLE>
+        <DESCRIPTION>AllowAccess can raise E_OS_CALLEVEL</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/7</ISSUE>
+        <TITLE>Modification 5.6.1/7</TITLE>
+        <DESCRIPTION>ControlIdle can raise E_OS_CALLEVEL</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.1/8</ISSUE>
+        <TITLE>Modification 5.6.1/8</TITLE>
+        <DESCRIPTION>GetApplicationState can raise E_OS_CALLEVEL</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.1/9</ISSUE>
+        <TITLE>Modification 5.6.1/9</TITLE>
+        <DESCRIPTION>VSMD (ParamDef) files updated for conformance with customer tooling. e.g. alphabetical ordering</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.1/10</ISSUE>
+        <TITLE>Modification 5.6.1/10</TITLE>
+        <DESCRIPTION>Adjusted internal references in the supplied VSMD (ParamDef) files for each AUTOSAR 4 version.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.1/11</ISSUE>
+        <TITLE>Modification 5.6.1/11</TITLE>
+        <DESCRIPTION>ActivateTask, StartScheduleTableRel, StartScheduleTableAbs, StartScheduleTableSynchron, SyncScheduleTable, Os_SyncScheduleTableRel and Os_SyncScheduleTableRel are not allowed in StartupHook (only checked when Service Protection is configured)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.1/12</ISSUE>
+        <TITLE>Modification 5.6.1/12</TITLE>
+        <DESCRIPTION>Rename E_OS_XCORE_QFULL to E_OS_SYS_XCORE_QFULL</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.1/13</ISSUE>
+        <TITLE>Modification 5.6.1/13</TITLE>
+        <DESCRIPTION>Minor correction in IOC code to ensure that correct MemMap sections are used in declaration and implementation.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 586153</ISSUE>
+        <TITLE>Incorrect values returned from GetSpinlockInfo.</TITLE>
+        <DESCRIPTION>GetSpinlockInfo could return an incorrect (large) value for the MaxSpinTime value. The value would be effectively the current stopwatch time. CurrentLockTime could contain a non-zero value when unlocked.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.6.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.0/1</ISSUE>
+        <TITLE>Modification 5.6.0/1</TITLE>
+        <DESCRIPTION>Tested on Windows 10.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/2</ISSUE>
+        <TITLE>Modification 5.6.0/2</TITLE>
+        <DESCRIPTION>Revised BSWMD file based on feedback.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/3</ISSUE>
+        <TITLE>Modification 5.6.0/3</TITLE>
+        <DESCRIPTION>Code generated for StartScheduleTableSynchron didn&apos;t always check that the ScheduleTable was explicitly synchronized.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/4</ISSUE>
+        <TITLE>Modification 5.6.0/4</TITLE>
+        <DESCRIPTION>Adjusted code and clarified documentation for GetElapsedTime and GetExecutionTime for consistent behavior in Pre and Post TASK hooks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/5</ISSUE>
+        <TITLE>Modification 5.6.0/5</TITLE>
+        <DESCRIPTION>Updated version of ETAS Licensing Manager is supplied. License controls are now placed in the Auth.exe.config file.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/6</ISSUE>
+        <TITLE>Modification 5.6.0/6</TITLE>
+        <DESCRIPTION>MISRA 2012 11.4/11.6 dismissals added to OSError_ macros.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/7</ISSUE>
+        <TITLE>Modification 5.6.0/7</TITLE>
+        <DESCRIPTION>Added check to Schedule() in case it is called from outside a TASK (not an allowed situation).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/8</ISSUE>
+        <TITLE>Modification 5.6.0/8</TITLE>
+        <DESCRIPTION>Corrected the OSError_ macro definition for GetStackSize.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/9</ISSUE>
+        <TITLE>Modification 5.6.0/9</TITLE>
+        <DESCRIPTION>Os_Cbk_CheckMemoryAccess was being passed the size of a pointer, not the size of the pointed-to item when used in some API calls.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/10</ISSUE>
+        <TITLE>Modification 5.6.0/10</TITLE>
+        <DESCRIPTION>StartScheduleTableSynchron now correctly returns E_OS_ID when a non-explicitly synchronized table is passed in to it.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.6.0/11</ISSUE>
+        <TITLE>Modification 5.6.0/11</TITLE>
+        <DESCRIPTION>ReleaseSpinlock now correctly returns E_OS_STATE when passed a NESTABLE spinlock that was not locked by the calling TASK or ISR.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.0/12</ISSUE>
+        <TITLE>Modification 5.6.0/12</TITLE>
+        <DESCRIPTION>Peripheral Areas are supported. This is an AUTOSAR 4.3.0 feature. RTA-OS allows the feature to be used with any AUTOSAR version.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.0/13</ISSUE>
+        <TITLE>Modification 5.6.0/13</TITLE>
+        <DESCRIPTION>Interrupt Source APIs are supported. This is an AUTOSAR 4.3.0 feature. RTA-OS allows the feature to be used with any AUTOSAR version. Your RTA-OS target port may need to be updated to support this feature.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.0/14</ISSUE>
+        <TITLE>Modification 5.6.0/14</TITLE>
+        <DESCRIPTION>A new report &apos;Os_BSWMD.arxml&apos; has been added to allow the generation of a BSW Module Definition file for RTA-OS.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.6.0/15</ISSUE>
+        <TITLE>Modification 5.6.0/15</TITLE>
+        <DESCRIPTION>RTA-OS Custom DLLs must now be enabled via an ETAS-provided key in the Auth.exe.config file.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 566622</ISSUE>
+        <TITLE>Added brackets around some macro parameters in Os.h</TITLE>
+        <DESCRIPTION>Some macros with parameters did not wrap them in brackets when used, contrary to MISRA 2012 rule 20.7. This was not detected by our source code checker.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 566503</ISSUE>
+        <TITLE>Could not release spinlocks with interrupts disabled when Service Protection was enabled.</TITLE>
+        <DESCRIPTION>GetSpinlock, ReleaseSpinlock, TryToGetSpinlock and TerminateApplication can now be called with interrupts disabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 574522</ISSUE>
+        <TITLE>Incorrect MPU settings after preemption by a trusted-with-protection TASK</TITLE>
+        <DESCRIPTION>On return from preemption by a trusted-with-protection TASK to an untrusted TASK, the Os_Cbk_SetMemoryAccess callback was not getting called to reset the MPU to the appropriate values for the untrusted TASK.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 565195</ISSUE>
+        <TITLE>Improve command-line error messages</TITLE>
+        <DESCRIPTION>Extra clarification has been added to some command-line errors to be more specific about the cause of the error. Previously messages such as &apos;Illegal characters in path&apos; were emitted without indicating which option was affected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 581901</ISSUE>
+        <TITLE>Incorrect calculation of RegisterSet preemption depth in multicore systems</TITLE>
+        <DESCRIPTION>Applied only on multicore where OS option &apos;Disallow Schedule()&apos; was set and Tasks had same priorities or used internal resources. The size needed for the RegisterSet buffers could be underestimated. Workaround: remove &apos;Disallow Schedule()&apos;.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.11">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.11/1</ISSUE>
+        <TITLE>Modification 5.5.11/1</TITLE>
+        <DESCRIPTION>The Reference Guide now shows that E_OS_ILLEGAL_ADDRESS can be reported in both STANDARD and EXTENDED builds.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.11/2</ISSUE>
+        <TITLE>Modification 5.5.11/2</TITLE>
+        <DESCRIPTION>Adjust IOC code used to copy data between structures so that bit-compatible but differently typed structures can be used.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.11/3</ISSUE>
+        <TITLE>Modification 5.5.11/3</TITLE>
+        <DESCRIPTION>IOC initialization uses structure copies rather than memcpy if possible.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.11/4</ISSUE>
+        <TITLE>Modification 5.5.11/4</TITLE>
+        <DESCRIPTION>ChainTask code adjusted to avoid a possible cross-core race condition that could delay the running of the chained TASK.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 565986</ISSUE>
+        <TITLE>User Guide.</TITLE>
+        <DESCRIPTION>Clarified the description of Stack overheads for ISR and Stack overheads for ISR activation.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.10">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.10/1</ISSUE>
+        <TITLE>Modification 5.5.10/1</TITLE>
+        <DESCRIPTION>Updated the documentation for Os_Cbk_CheckMemoryAccess to clarify its usage.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.10/2</ISSUE>
+        <TITLE>Modification 5.5.10/2</TITLE>
+        <DESCRIPTION>The default implementation of Os_ioc_memcpy in the RTA-OS library can be replaced simply by the application code providing its own version.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.10/3</ISSUE>
+        <TITLE>Modification 5.5.10/3</TITLE>
+        <DESCRIPTION>IOC code will use structure assignment rather than Os_ioc_memcpy when possible.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.10/4</ISSUE>
+        <TITLE>Modification 5.5.10/4</TITLE>
+        <DESCRIPTION>The names of the memory sections created for the OS options &apos;IOC Data&apos; and &apos;IOC code&apos; has been modified since the preview.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.9">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.9/1</ISSUE>
+        <TITLE>Modification 5.5.9/1</TITLE>
+        <DESCRIPTION>Each cross-core IOC communication has its own spinlock, rather than a single global one. This is done to reduce cross-core blocking.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.9/2</ISSUE>
+        <TITLE>Modification 5.5.9/2</TITLE>
+        <DESCRIPTION>The new OS option &apos;IOC Data&apos; can be used to control the MemMap data section allocation for IOC data buffers. This can be used to reduce untrusted/trusted code transitions.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.9/3</ISSUE>
+        <TITLE>Modification 5.5.9/3</TITLE>
+        <DESCRIPTION>The new OS option &apos;IOC Code&apos; can be used to control the MemMap code section allocation for IOC APIs. APIs can be allocated to a code section belonging to the OS Application of the caller.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.9/4</ISSUE>
+        <TITLE>Modification 5.5.9/4</TITLE>
+        <DESCRIPTION>IOC code is optimized when the OS detects extra call-pattern information from RTA-RTE. Multiple data transfers can be batched together and executed via a single API call. Preemption information can be used to reduce blocking. This behavior can be disabled using the new OS option &apos;Disable IOC optimizations&apos;</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.9/5</ISSUE>
+        <TITLE>Modification 5.5.9/5</TITLE>
+        <DESCRIPTION>The new OS option &apos;IOC blocking threshold&apos; can be used to control the blocking duration for batched IOC data transfers.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 550970</ISSUE>
+        <TITLE>ECC TASKs running on the wrong core.</TITLE>
+        <DESCRIPTION>It was possible for an ECC TASK allocated to one core to be (always) started on a different core. This situation would be quickly noticed in testing. This issue occurred only when more than one core had ECC TASKs, and depended on TASK priorities. Workaround: Ensure that all ECC TASKs on core {N} have priorities greater than those on core {N-1}.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 556745</ISSUE>
+        <TITLE>Compilation error in Os_Cfg_Counters.c</TITLE>
+        <DESCRIPTION>In a multicore system with a Software Counter that only drives Alarms, and where none of the Alarms activate a TASK, a compile error could occur because of a missing reference to os_current_controlled_core.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 558338</ISSUE>
+        <TITLE>Insufficient resource locking for TASKs that share a priority.</TITLE>
+        <DESCRIPTION>If a resource is used by a TASK that shares a priority with another TASK, then it should lock to at least the base priority of all TASKs that share that priority. Previously it was possible for the lock to omit some of these shared-priority TASKs. This is only a problem if the TASKs use multiple activation, because the implementation of the resulting FIFO activation mechanism meant that the activation of one of the TASKs with higher base priority could allow a lower base priority TASK to be popped from the FIFO and run, even though the resource was locked. A workaround is to configure the system so that any resource that is used by a TASK with a shared priority is also used by all other TASKs at that priority.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 559562</ISSUE>
+        <TITLE>Incorrect return from GetCurrentApplicationID()</TITLE>
+        <DESCRIPTION>When calling GetCurrentApplicationID() from an ISR or TASK that was preempting a Trusted Function, the return value would be the ID of the OS Application for the Trusted Function.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.8">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 548986</ISSUE>
+        <TITLE>Imbalance in MemMap start/stop directives in systems with no Counters, Alarms or ScheduleTables.</TITLE>
+        <DESCRIPTION>In a system where no code needed to be emitted in for Counters, Alarms or ScheduleTables, the internal source file Os_Cfg_Counters.c could contain a OS_STOP_SEC_CONST_FAST_UNSPECIFIED without a preceding OS_START_SEC_CONST_FAST_UNSPECIFIED. There is no effect on the generated object code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 528612</ISSUE>
+        <TITLE>Number of Cores incorrect in the RTA-OS GUI</TITLE>
+        <DESCRIPTION>When a configuration with OsNumberOfCores equal to 1 was first loaded in to the RTA-OS GUI, it would increase the number to match the total number of cores supported by the target. Subsequent loads of the same file did not have this behavior.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.7">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.7/1</ISSUE>
+        <TITLE>Modification 5.5.7/1</TITLE>
+        <DESCRIPTION>Minor fixed for changes noted in the 5.5.6 preview.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.7/2</ISSUE>
+        <TITLE>Modification 5.5.7/2</TITLE>
+        <DESCRIPTION>Additional hardware information has been added to the Configuration Summary.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.7/3</ISSUE>
+        <TITLE>Modification 5.5.7/3</TITLE>
+        <DESCRIPTION>Additional information about Alarm autostarting has been added to the Configuration Summary.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.7/4</ISSUE>
+        <TITLE>Modification 5.5.7/4</TITLE>
+        <DESCRIPTION>Where a configuration has untrusted code and stack protection is used, targets that use the stack realignment feature now follow the same code path whether the AlignedAddress has been changed or not. This makes the run-time behavior consistent in each invocation and makes it easier to protect from register corruption in the untrusted code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 537764</ISSUE>
+        <TITLE>Failure to build OS (out of memory)</TITLE>
+        <DESCRIPTION>Migration of core tools to use .NET version 4 has improved memory performance.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 546476</ISSUE>
+        <TITLE>Reference bases in IOC</TITLE>
+        <DESCRIPTION>The IOC component in RTA-OS now takes account of Reference Bases in the ARXML.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 546474</ISSUE>
+        <TITLE>Calculation of remaining time is incorrect when a trusted function is terminated with an exception.</TITLE>
+        <DESCRIPTION>The remaining time is now decremented correctly.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 546475</ISSUE>
+        <TITLE>Calculation of remaining time is incorrect when a trusted function is terminated with resource lock timeout AND there is a timing protection interrupt.</TITLE>
+        <DESCRIPTION>The remaining time is now decremented correctly.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.6">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.6/1</ISSUE>
+        <TITLE>Modification 5.5.6/1</TITLE>
+        <DESCRIPTION>This preview release supports TrustedApplicationWithProtection for OS Applications. This can only be selected on target ports that have been updated to support it.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 541022</ISSUE>
+        <TITLE>Os_ShutdownAllCores() fails in untrusted mode when ORTI is switched on</TITLE>
+        <DESCRIPTION>Os_ShutdownAllCores may only be called by trusted code, so it returns without shutting down when called from untrusted code. Previously the ORTI variable Os_OrtiApiID was written before checking the trust state, possibly provoking a memory protection fault.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.5">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.5/1</ISSUE>
+        <TITLE>Modification 5.5.5/1</TITLE>
+        <DESCRIPTION>MISRA checks are now performed according to the MISRA C:2012 Guidelines using the PC-Lint analysis tool. This has resulted in small modifications to individual lines of code, and slightly different lint dismissals. The MISRA Deviations report has been enhanced to include additional information required by MISRA C:2012.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.5/2</ISSUE>
+        <TITLE>Modification 5.5.5/2</TITLE>
+        <DESCRIPTION>Autostarted TASKs, Alarms and ScheduleTables are now started on the core that owns them. Previously the master core started all of them.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.5/3</ISSUE>
+        <TITLE>Modification 5.5.5/3</TITLE>
+        <DESCRIPTION>The OS options &apos;Asynchronous TASK activation&apos; and &apos;AsyncQ&apos; have been added. These modify APIs that cause cross-core activation (e.g. ActivateTask, ChainTask and SetEvent) so that they queue a message for the owning core to process during a cross-core interrupt. This allows the OS to remove the internal task-related spinlock and reduce cross-core blocking. Refer to the RTA-OS Reference Guide for more information.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.5/4</ISSUE>
+        <TITLE>Modification 5.5.5/4</TITLE>
+        <DESCRIPTION>The new OS option &apos;-{}-ioc&apos; has been added. This now allows the OS and IOC to be generated in independent stages. Refer to the RTA-OS Reference Guide for more information.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.4">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 531809</ISSUE>
+        <TITLE>Cross-core IocWrite must be implemented as a FUNCTION if there is a receive callback</TITLE>
+        <DESCRIPTION>RTA-OS will try to implement IocWrite as a MACRO for simple types so that the code can be inlined for efficiency. However prior to this fix, the implementation would not signal a receiver callback to run.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.3">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 522355</ISSUE>
+        <TITLE>Build-related command-line options to GUI</TITLE>
+        <DESCRIPTION>The -{}-target_include option could be passed to the GUI, but it did not get passed automatically to rtaosgen for building, although it could be entered manually and stored in the .rtaos file. The code now passes through GUI options that relate to the build. Affected versions: 5.5.0 and 5.5.1.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.2/1</ISSUE>
+        <TITLE>Modification 5.5.2/1</TITLE>
+        <DESCRIPTION>E_OS_VALUE is documented as an error return code for GetElapsedCounterValue. (Documentation change only.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.2/2</ISSUE>
+        <TITLE>Modification 5.5.2/2</TITLE>
+        <DESCRIPTION>A counter with no Alarms or ScheduleTables will wrap at its maxallowedvalue. Previously it would continue incrementing to the maximum 32-bit value before wrapping.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 516364</ISSUE>
+        <TITLE>Issue with IocEmptyQueue APIs on PPC target ports</TITLE>
+        <DESCRIPTION>When a queued communication is used with IOC between exactly 2 different cores, the code generated for the IocEmptyQueue_xxx API should only be called from the receiver. If it is called by the sender then it might change the interrupt priority of the core of the receiver.  This only affects multicore PowerPC target ports.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 520507</ISSUE>
+        <TITLE>Fault in multicore code for Delayed Tasks</TITLE>
+        <DESCRIPTION>The code generated for Delayed Tasks in a multicore configuration might only deal with one core. Affected versions: 5.5.0 and 5.5.1.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 522340</ISSUE>
+        <TITLE>Compilation error in Os_Cfg.c with shared resources</TITLE>
+        <DESCRIPTION>A compilation error would happen in Os_Cfg.c if the following 2 conditions occurred: (a) a resource was used by an interrupt and (b) the number of tasks on two cores differed by 32 or more. Affected versions: 5.5.0 and 5.5.1.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.1/1</ISSUE>
+        <TITLE>Modification 5.5.1/1</TITLE>
+        <DESCRIPTION>Adds the AUTOSAR 4.2.x &apos;TrustedApplicationDelayTimingViolationCall&apos; feature. RTA-OS allows this option to be selected for both trusted and untrusted OS Applications. RTA-OS also allows it to be used with earlier AUTOSAR versions.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 511179</ISSUE>
+        <TITLE>Race condition affecting per-application error hooks</TITLE>
+        <DESCRIPTION>For multicore configurations using the RH850GHS, PPCWR, PPCHT, PPCGHS and ZynqRVDS targets, it was possible for one core to raise the wrong application-specific error hook if (1) two such hooks were raised at the same time on different cores and (2) both belonged to an untrusted OS-Application and (3) untrusted stack realignment was configured.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.5.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.0/1</ISSUE>
+        <TITLE>Modification 5.5.0/1</TITLE>
+        <DESCRIPTION>Supports AUTOSAR 4.2.1 and 4.2.2, apart from &apos;TrustedApplicationDelayTimingViolationCall&apos; and &apos;TrustedApplicationWithProtection&apos; which are not yet implemented.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.0/2</ISSUE>
+        <TITLE>Modification 5.5.0/2</TITLE>
+        <DESCRIPTION>A new Options Reference Report is available, and the OS and target options are described in the RTA-OS Reference Guide.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.5.0/3</ISSUE>
+        <TITLE>Modification 5.5.0/3</TITLE>
+        <DESCRIPTION>Addition of the OS_TPL_/OS_IMASK_ macros and the Os_GetCurrentTPL()/Os_GetCurrentIMask() APIs.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/4</ISSUE>
+        <TITLE>Modification 5.5.0/4</TITLE>
+        <DESCRIPTION>The internal implementation for multicore projects has been changed to reduce cross-core interference and to improve scalability to a higher number of cores. The ready state of tasks is now owned by the appropriate core rather then being shared between all cores. Each core has an internal spinlock for protecting access to its tasks, which reduces cross-core blocking. The task dispatching code is now specific to each core, so it only depends on the number of tasks on the core rather than the whole system.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/5</ISSUE>
+        <TITLE>Modification 5.5.0/5</TITLE>
+        <DESCRIPTION>The OS no longer uses *_least types in public APIs.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/6</ISSUE>
+        <TITLE>Modification 5.5.0/6</TITLE>
+        <DESCRIPTION>The DelayedTask feature is core-specific. You must only add tasks from the calling core to a delayed taskset.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/7</ISSUE>
+        <TITLE>Modification 5.5.0/7</TITLE>
+        <DESCRIPTION>DelayedTasks are only supported in systems with a maximum of 64 tasks per core.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/8</ISSUE>
+        <TITLE>Modification 5.5.0/8</TITLE>
+        <DESCRIPTION>The OS option Timing Protection Interrupt is now a TRUE/FALSE value. Previously a Category 1 ISR had to be specified. Each core must still provide a timing protection interrupt when this option is set to TRUE, but the OS does not check it.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/9</ISSUE>
+        <TITLE>Modification 5.5.0/9</TITLE>
+        <DESCRIPTION>OS builds that are done inside the RTA-OS GUI are now implemented by building a command-line and passing it to rtaosgen.exe for the actual build. This avoids out of memory issues that have been seen in GUI builds. Note that the command-line can be modified in the GUI before starting the build.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.5.0/10</ISSUE>
+        <TITLE>Modification 5.5.0/10</TITLE>
+        <DESCRIPTION>The ShutdownAllCores API uses an inlined version of DisableAllInterrupts, instead of calling it directly.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 485504</ISSUE>
+        <TITLE>Ordering in GUI</TITLE>
+        <DESCRIPTION>In the navigation tree, ISRs can be sorted by Name, Priority, Address or Category. Tasks can be sorted by Name or Priority.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 474886</ISSUE>
+        <TITLE>Sample Applications</TITLE>
+        <DESCRIPTION>Sample applications contain the version and processor variant in the sample XML, so that they can be more easily read back into the GUI.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 477315</ISSUE>
+        <TITLE>GUI import</TITLE>
+        <DESCRIPTION>There was a discrepancy in the ISR information retained when opening a configuration file via the GUI versus the command line.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 485193</ISSUE>
+        <TITLE>Sample code</TITLE>
+        <DESCRIPTION>The default implementations of Os_Cbk_SetTimeLimit and Os_Cbk_SuspendTimeLimit are multicore aware.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 475944</ISSUE>
+        <TITLE>GUI build option</TITLE>
+        <DESCRIPTION>The RTA-OS GUI option &quot;Keep source code&quot; was greyed out even when there was a valid licence.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 485189</ISSUE>
+        <TITLE>Tools crash</TITLE>
+        <DESCRIPTION>The tools could crash when loading a configuration where an OS Application did not have a valid core assignment.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 472745</ISSUE>
+        <TITLE>Documentation</TITLE>
+        <DESCRIPTION>The User Documentation adds Windows 8.1 to the list of supported platforms</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 492200</ISSUE>
+        <TITLE>RTA-OS User Guide</TITLE>
+        <DESCRIPTION>Additional explanation of which APIs can be called when interrupts are disabled.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 483338</ISSUE>
+        <TITLE>RTA-OS User Guide</TITLE>
+        <DESCRIPTION>The description of ECC Wait Stack size is clarified.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 487821</ISSUE>
+        <TITLE>Hardware Counters</TITLE>
+        <DESCRIPTION>It was possible to miss the activation of an alarm if a new alarm was being started and the hardware compare match occurred just after the OS had checked if the compare interrupt was pending.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 487825</ISSUE>
+        <TITLE>Timing protection restoration after nested preemption</TITLE>
+        <DESCRIPTION>It was possible for a nested interrupt to allocate more execution time to a preempted TASK than was correct. Only the first preemption should adjust its time.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.4.4">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.4.4/1</ISSUE>
+        <TITLE>Modification 5.4.4/1</TITLE>
+        <DESCRIPTION>OS option &apos;Collect OS usage metrics&apos; has been added. Please refer to RTA-OS User Guide</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.4.4/2</ISSUE>
+        <TITLE>Modification 5.4.4/2</TITLE>
+        <DESCRIPTION>Support for TriCoreHighTec optimizations</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.4.3">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.3/1</ISSUE>
+        <TITLE>Modification 5.4.3/1</TITLE>
+        <DESCRIPTION>Multicore only: Resource lock durations specified for RES_SCHEDULER are recognized. Previously they were ignored.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.3/2</ISSUE>
+        <TITLE>Modification 5.4.3/2</TITLE>
+        <DESCRIPTION>Hardware counters can be used reliably on multicore systems. The OS now ensures that the callbacks that change the counter match conditions only run on the core that owns the counter. This makes it easier to implement correct callbacks. Typically the same code can be used for both single and multi core systems.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.3/3</ISSUE>
+        <TITLE>Modification 5.4.3/3</TITLE>
+        <DESCRIPTION>ORTI output is modified to change from using the pointer variables Os_OrtiRunningISRn, Os_OrtiRunningTaskn to a more explicit form. Some debuggers didn&apos;t like having to dereference the variables.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 417525</ISSUE>
+        <TITLE>OS variables read permission with untrusted code</TITLE>
+        <DESCRIPTION>Just after switching to untrusted mode to enter an untrusted TASK, ISR or function, the OS was reading from an OS variable or constant that held the entry address. This meant that OS data had to be readable (though not writable) from untrusted code. Although this is a common way to set up the memory protection, some customers might prefer to prevent read access to OS data by untrusted code. The implementation has been adjusted to help support this.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 451106</ISSUE>
+        <TITLE>ShutdownAllCores with untrusted OS Applications</TITLE>
+        <DESCRIPTION>Calling ShutdownAllCores could fail to complete if code on another core was running untrusted code at the time of the call.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 452252</ISSUE>
+        <TITLE>Check-only build option in GUI</TITLE>
+        <DESCRIPTION>For some targets (e.g. TriCore Tasking), a check-only build of the OS from within the OS GUI would fail if the compiler was not on the path.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 456736</ISSUE>
+        <TITLE>Compilation warning in CallTrustedFunction.c</TITLE>
+        <DESCRIPTION>A compilation warning could occur in CallTrustedFunction.c for the case where memory protection is enabled and there are untrusted TASKs, but no untrusted Functions.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 456737</ISSUE>
+        <TITLE>Compilation failure in Os_Wrapper.c</TITLE>
+        <DESCRIPTION>If the OS option &apos;Only Terminate Untrusted Applications&apos; was true and there were no Untrusted Applications, this could provoke a compilation error. This is corrected and now for this case the OS does not emit any code to support termination of Applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 458456</ISSUE>
+        <TITLE>Compilation failure in Ioc.c</TITLE>
+        <DESCRIPTION>A compilation error could occur in Ioc.c for elements taking 2 or more values where the FunctionImplementationKind was MACRO.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 458502</ISSUE>
+        <TITLE>Write to ORTI variable from untrusted code</TITLE>
+        <DESCRIPTION>Some &apos;readonly&apos; APIs such as GetISRID() were not switching to trusted mode before updating the OS internal ORTI variables. This occurred when ORTI was enabled and the option &apos;Untrusted code can read OS data&apos; was TRUE.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 458506</ISSUE>
+        <TITLE>Compilation failure in TimeProtection.c</TITLE>
+        <DESCRIPTION>A compilation error could occur in TimeProtection.c when using Timing Protection with a timing interrupt in a multicore configuration.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 473819</ISSUE>
+        <TITLE>Race condition in ShutdownAllCores</TITLE>
+        <DESCRIPTION>If a cross-core interrupt occurred during a call to ShutdownAllCores, it was possible that the other cores would not be informed about the shutdown immediately. In some situations the other cores might not detect the shutdown. This issue is fixed. As a workaround for earlier versions, call DisableAllInterrupts() before calling ShutdownAllCores().</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.4.2">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.2/1</ISSUE>
+        <TITLE>Modification 5.4.2/1</TITLE>
+        <DESCRIPTION>Fix an issue in multicore projects that broke backwards compatibility with older target ports.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.2/2</ISSUE>
+        <TITLE>Modification 5.4.2/2</TITLE>
+        <DESCRIPTION>Remove declaration of unused variable setjmp_retval in cross-core ISRs.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.4.1">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.1/1</ISSUE>
+        <TITLE>Modification 5.4.1/1</TITLE>
+        <DESCRIPTION>When &apos;Optimize for core-local memory&apos; is selected, the per-core dynamic data for ISRs is now initialized correctly during StartOS. Previously it relied on its memory being cleared during startup.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.1/2</ISSUE>
+        <TITLE>Modification 5.4.1/2</TITLE>
+        <DESCRIPTION>Added protective ()&apos;s in the macros OSMEMORY_IS_READABLE, OSMEMORY_IS_WRITEABLE, OSMEMORY_IS_EXECUTABLE and OSMEMORY_IS_STACKSPACE</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.1/3</ISSUE>
+        <TITLE>Modification 5.4.1/3</TITLE>
+        <DESCRIPTION>GUI supports creation of sample applications for VRTA version 3.0.13. The code did not previously support versions that ended with more than one digit.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 442493</ISSUE>
+        <TITLE>GUI crash</TITLE>
+        <DESCRIPTION>Malformed ARXML missing VALUE-REFs could cause the GUI to crash when reading in the data.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 432574</ISSUE>
+        <TITLE>Untrusted functions</TITLE>
+        <DESCRIPTION>RTA-OS allows untrusted OS Applications to declare &apos;Trusted Functions&apos;. These can be used in the same way as AUTOSAR trusted functions, but they run untrusted. A build warning has been added to make it clear when this is happening.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.4.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.4.0/1</ISSUE>
+        <TITLE>Modification 5.4.0/1</TITLE>
+        <DESCRIPTION>The OS option &apos;Optimize for core-local memory&apos; has been added. This re-organizes some OS data structures so that they can be assigned to core-local memory via the MemMap mechanism. Refer to the sample Os_MemMap.h to see the section names that get allocated.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/2</ISSUE>
+        <TITLE>Modification 5.4.0/2</TITLE>
+        <DESCRIPTION>The initialization of internal spinlock variables has been moved inside StartOS rather than relying on power-on clearing of their values.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/3</ISSUE>
+        <TITLE>Modification 5.4.0/3</TITLE>
+        <DESCRIPTION>For AUTOSAR 4.0.2 and above, OS data that must be cleared during reset moves from MemMap section OS_START_SEC_VAR_POWER_ON_INIT to OS_START_SEC_VAR_CLEARED.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/4</ISSUE>
+        <TITLE>Modification 5.4.0/4</TITLE>
+        <DESCRIPTION>For AUTOSAR 4.0.3 and above, OS data that does not need to be initialized during reset moves from MemMap section OS_START_SEC_VAR_NOINIT to OS_START_SEC_VAR_NO_INIT.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/5</ISSUE>
+        <TITLE>Modification 5.4.0/5</TITLE>
+        <DESCRIPTION>The content of the example Os_MemMap.h file is adjusted in AUTOSAR 4.0.2 and 4.0.3 configurations to match the changes in the MemMap specification.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/6</ISSUE>
+        <TITLE>Modification 5.4.0/6</TITLE>
+        <DESCRIPTION>For AUTOSAR 4.0 and below, switch from using OS_APPL_CODE to OS_CALLOUT_CODE in non OS-internal functions to be AUTOSAR 4.0 compliant. (OS_CALLOUT_CODE will fall back to be the same as OS_APPL_CODE for earlier versions, so no change is needed in your code.)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/7</ISSUE>
+        <TITLE>Modification 5.4.0/7</TITLE>
+        <DESCRIPTION>For AUTOSAR 4.1, the memory mapping mechanism #includes the Os_MemMap.h file rather than MemMap.h.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/8</ISSUE>
+        <TITLE>Modification 5.4.0/8</TITLE>
+        <DESCRIPTION>For AUTOSAR 4.1, callouts (including hooks) have their own memory mapping section named according to the pattern OS_START_SEC_{CN}_CODE where {CN} is the callback name written in uppercase letters. The Os_MemMap.h sample file can be used to see the expected names. Note that some existing target port plug-ins might not compile for AUTOSAR 4.1 because of this change. Please contact support if this is the case for you.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.4.0/9</ISSUE>
+        <TITLE>Modification 5.4.0/9</TITLE>
+        <DESCRIPTION>VSMD files have been updated.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.3.91">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.91/1</ISSUE>
+        <TITLE>Modification 5.3.91/1</TITLE>
+        <DESCRIPTION>Supports for AUTOSAR 4.1.3</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.91/2</ISSUE>
+        <TITLE>Modification 5.3.91/2</TITLE>
+        <DESCRIPTION>Adjust OSTICKDURATION macro so it can be used in the code &apos;#if (OSTICKDURATION &amp;lt; 1000)&apos;</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.91/3</ISSUE>
+        <TITLE>Modification 5.3.91/3</TITLE>
+        <DESCRIPTION>The file Os_MemMap.h has moved into the RTA-OS samples. Use command-line option -{}-samples:[Includes] to generate it. This is to emphasize that it is an example that can be optionally used as a start point by a system integrator.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 421442</ISSUE>
+        <TITLE>Missed events from alarm</TITLE>
+        <DESCRIPTION>Corrected an issue that could result in alarms not setting events under these specific conditions:
+ IF (you have alarms that set events)
+  AND there are alarms on the same counter that activate tasks but *don&apos;t* set events
+   AND EITHER
+     ((number of event bits &lt;  9) AND ((number of tasks + number of alarm callbacks + number of event bits) &gt;  8))
+   OR
+     ((number of event bits &lt; 17) AND ((number of tasks + number of alarm callbacks + number of event bits) &gt; 16))
+   THEN
+     One or more events will not get set when the alarm fires. The task may resume from wait, but will not see the event set.
+
+Note: &apos;number of event bits&apos; is normally the maximum number of events that any task waits for. It is not the total number of
+events. i.e. you can have 30 events in the system, but if no task waits for more than 2 events then the number of event bits
+is 2. This only changes if you allocate specific mask values to alarms because the number of event bits may have to increase
+to account for the value you set.
+
+Workaround: Select an event and force its mask to bit 9 or 17 such that the condition above is no longer met.
+</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 422921</ISSUE>
+        <TITLE>Software counters do not increment unless they contain Alarms or ScheduleTables</TITLE>
+        <DESCRIPTION>(Introduced in version 5.3.1) Software counters that contain no Alarms or ScheduleTables returned zero from GetCounterValue().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 420784</ISSUE>
+        <TITLE>VSMD reference in OsRegSetRef</TITLE>
+        <DESCRIPTION>The DESTINATION-REF for OsRegSet has a wrong path</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 416358</ISSUE>
+        <TITLE>VSMD REFINED-MODULE-DEF-REF</TITLE>
+        <DESCRIPTION>The REFINED-MODULE-DEF-REF section was in the wrong place in the VSMD</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 425490</ISSUE>
+        <TITLE>User Guide</TITLE>
+        <DESCRIPTION>Section 10.1 of the RTA-OS User Guide wrongly stated that a Counter could only drive one ScheduleTable.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.3.90">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.90/1</ISSUE>
+        <TITLE>Modification 5.3.90/1</TITLE>
+        <DESCRIPTION>Experimental mc_experiment option for allocating data to core-local memory</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.90/2</ISSUE>
+        <TITLE>Modification 5.3.90/2</TITLE>
+        <DESCRIPTION>Cross-core access to hardware counters from Alarms/ScheduleTables on different cores is not allowed unless option &apos;Allow cross-core HW counter access&apos; is set. This is because it is generally not possible to eliminate race conditions with code on different cores trying to set a new counter match value at the same time.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.3.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.2/1</ISSUE>
+        <TITLE>Modification 5.3.2/1</TITLE>
+        <DESCRIPTION>API GetElapsedValue is added for AUTOSAR 4.x applications. It is an alias to GetElapsedCounterValue.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 403473</ISSUE>
+        <TITLE>In version 5.3.1, the VSMD files for AUTOSAR 3.x were generated incorrectly and included some AUTOSAR 4.x syntax.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 412197</ISSUE>
+        <TITLE>In version 5.3.1 an internal crash could occur when calculating stack usage. This affected unusual multicore configurations where the OsTaskCanCallSchedule feature was set to FALSE on a TASK.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.3.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/1</ISSUE>
+        <TITLE>Modification 5.3.1/1</TITLE>
+        <DESCRIPTION>Support for AUTOSAR 4.1.x ARXML.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/2</ISSUE>
+        <TITLE>Modification 5.3.1/2</TITLE>
+        <DESCRIPTION>IOC supports N:M unqueued communication. This is a feature of AUTOSAR 4.1.x, but RTA-OS supports it in earlier versions when configured.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/3</ISSUE>
+        <TITLE>Modification 5.3.1/3</TITLE>
+        <DESCRIPTION>The boolean parameter OsTaskCanCallSchedule is added to the TASK configuration. This can be set to FALSE if the TASK will not call the Schedule() API call - which may reduce system stack usage. The parameter defaults to TRUE. It is ignored if global OS option &apos;Disallow Schedule()&apos; is TRUE, because that implies that no TASK calls Schedule().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/4</ISSUE>
+        <TITLE>Modification 5.3.1/4</TITLE>
+        <DESCRIPTION>Option &apos;-{}-debug:compact_source&apos; can be used to emit the compact version of the source code used to build the OS. This version does not expand all include files into the C source. (Source code license needed).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/5</ISSUE>
+        <TITLE>Modification 5.3.1/5</TITLE>
+        <DESCRIPTION>Option &apos;Stack Sampling&apos; has been added to cause the Os_Cbk_CheckStackDepth callback to get called to support monitoring of overall stack usage at run time</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/6</ISSUE>
+        <TITLE>Modification 5.3.1/6</TITLE>
+        <DESCRIPTION>When you create a new project in RTAOSCfg, you can now provide an empty ECU Configuration Name. In this case no ECUC-VALUE-COLLECTION element will be placed in the generated ARXML file. Similarly, if a file is read in without an ECUC-VALUE-COLLECTION element, none will be created.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.3.1/7</ISSUE>
+        <TITLE>Modification 5.3.1/7</TITLE>
+        <DESCRIPTION>OS Option &apos;Task Activation Hook&apos; can be used to cause Os_Cbk_TaskActivated(TaskID) to get called at Task activations.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/8</ISSUE>
+        <TITLE>Modification 5.3.1/8</TITLE>
+        <DESCRIPTION>The memmap section for certain constants has moved from CONST_UNSPECIFIED to CONST_FAST_UNSPECIFIED. The constants affected are Os_const_coreconfiguration, Os_const_applications, Os_const_isrs, Os_const_tasks, Os_const_resources, Os_const_alarms, Os_const_counters, Os_const_scheduletables and TotalNumberOfCores.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/9</ISSUE>
+        <TITLE>Modification 5.3.1/9</TITLE>
+        <DESCRIPTION>Os_Cbk_StackOverrunHook: OS_ECC_START, OS_ECC_RESUME and OS_ECC_WAIT can occur independently of whether Stack Monitoring is configured.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/10</ISSUE>
+        <TITLE>Modification 5.3.1/10</TITLE>
+        <DESCRIPTION>Updates/corrections to the documentation for Os_Cbk_StackOverrunHook.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/11</ISSUE>
+        <TITLE>Modification 5.3.1/11</TITLE>
+        <DESCRIPTION>Changes license check scheme.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/12</ISSUE>
+        <TITLE>Modification 5.3.1/12</TITLE>
+        <DESCRIPTION>Removed E_OS_ACCESS checks from SyncScheduleTable/SyncScheduleTableRel when in STANDARD status.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/13</ISSUE>
+        <TITLE>Modification 5.3.1/13</TITLE>
+        <DESCRIPTION>For configurations created for AUTOSAR 4.0.3 onwards, references in the ARXML change from /ETAS_RTAOS to /AUTOSAR_Os/EcucModuleDefs</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/14</ISSUE>
+        <TITLE>Modification 5.3.1/14</TITLE>
+        <DESCRIPTION>When creating a new project in the GUI, the Package Heirarchy can be used to create nested packages. e.g. a/b/c/EcucModuleConfigurationValuess.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/15</ISSUE>
+        <TITLE>Modification 5.3.1/15</TITLE>
+        <DESCRIPTION>Only for multicore systems using delayed tasks: the task dispatcher is modified to avoid a race condition involving changing the delayed task set from a different core.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.1/16</ISSUE>
+        <TITLE>Modification 5.3.1/16</TITLE>
+        <DESCRIPTION>Structure of VSMD files for AUTOSAR 4.0.3+ has changed slightly, based on customer feedback.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 390500</ISSUE>
+        <TITLE>Compilation error in CallTrustedFunction.c with a rare set of multicore configuration options.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 392097</ISSUE>
+        <TITLE>In SC3/4, PostTaskHook was not getting called when a Task terminated through ChainTask.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 399847</ISSUE>
+        <TITLE>In the Beta2 GUI, sorting of some columns in the TASK and ISR summary caused the application to crash.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.3.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.0/1</ISSUE>
+        <TITLE>Modification 5.3.0/1</TITLE>
+        <DESCRIPTION>Correction to max execution time calculation for ECC tasks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.3.0/2</ISSUE>
+        <TITLE>Modification 5.3.0/2</TITLE>
+        <DESCRIPTION>Correct service protection checks for APIs that can run during Startup Hook</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.2.9">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/1</ISSUE>
+        <TITLE>Modification 5.2.9/1</TITLE>
+        <DESCRIPTION>When the GUI RTAOSCfg creates new containers with an upper-multiplicity of 1, it now standardizes on giving then a SHORT-NAME that is the same as the AUTOSAR name. e.g. OsHooks, OsScheduleTblAdjustableExpPoint</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/2</ISSUE>
+        <TITLE>Modification 5.2.9/2</TITLE>
+        <DESCRIPTION>Added option to control checking for Activation of ECC tasks that are in the WAITING state. By default the check is not done, because ECC tasks typically are only activated once.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.2.9/3</ISSUE>
+        <TITLE>Modification 5.2.9/3</TITLE>
+        <DESCRIPTION>Update to the code used to support Elapsed Time Recording to fix issue with ISRs that activate tasks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/4</ISSUE>
+        <TITLE>Modification 5.2.9/4</TITLE>
+        <DESCRIPTION>The Os_SyncScheduleTableRel() has been added as an alternative for the AUTOSAR SyncScheduleTable() API where you supply a drift value rather than an absolute value.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/5</ISSUE>
+        <TITLE>Modification 5.2.9/5</TITLE>
+        <DESCRIPTION>Option &apos;Enable Elapsed Time Recording&apos; has been added to provide support for measuring total time spent in Idle, Tasks and Category 2 ISRs through a new set of APIs</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/6</ISSUE>
+        <TITLE>Modification 5.2.9/6</TITLE>
+        <DESCRIPTION>Option &apos;Single Memory Protection Zone&apos; has been added to optimize setting up memory protection where all untrusted code can use a single set of protection settings..</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/7</ISSUE>
+        <TITLE>Modification 5.2.9/7</TITLE>
+        <DESCRIPTION>Option &apos;Stack Only Memory Protection&apos; has been added to optimize setting up memory protection where only the stack protection range needs to be changed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/8</ISSUE>
+        <TITLE>Modification 5.2.9/8</TITLE>
+        <DESCRIPTION>Option &apos;Optimize Schedule()&apos; is now also effective when there are more than 64 tasks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/9</ISSUE>
+        <TITLE>Modification 5.2.9/9</TITLE>
+        <DESCRIPTION>If it exists, the file (projectname)_postsamples.bat gets run during the build process. It runs after any sample files get created, so can be used to copy them to the correct build location.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/10</ISSUE>
+        <TITLE>Modification 5.2.9/10</TITLE>
+        <DESCRIPTION>The StackFaultHook option is taken account of correctly.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/11</ISSUE>
+        <TITLE>Modification 5.2.9/11</TITLE>
+        <DESCRIPTION>The version number of the target port is added to the header of all source files.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/12</ISSUE>
+        <TITLE>Modification 5.2.9/12</TITLE>
+        <DESCRIPTION>The command-line option -{}-os_option has been added. This acts like -{}-target_option, but for the OS-specific options.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/13</ISSUE>
+        <TITLE>Modification 5.2.9/13</TITLE>
+        <DESCRIPTION>Stack realignment of ECC tasks is possible within Os_Cbk_SetMemoryAccess().</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/14</ISSUE>
+        <TITLE>Modification 5.2.9/14</TITLE>
+        <DESCRIPTION>OS_INDEX_TO_TASKTYPE has been added as a partner to OS_TASKTYPE_TO_INDEX</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.9/15</ISSUE>
+        <TITLE>Modification 5.2.9/15</TITLE>
+        <DESCRIPTION>The macro OS_FAST_TASK_TERMINATION is defined when option &apos;Fast Terminate&apos; results in TerminateTask() being implemented as a simple return statement.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.2.9/16</ISSUE>
+        <TITLE>Modification 5.2.9/16</TITLE>
+        <DESCRIPTION>In ARXML for AUTOSAR 4.0.3, OsResources do not belong to an OS-Application.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.2.9/17</ISSUE>
+        <TITLE>Modification 5.2.9/17</TITLE>
+        <DESCRIPTION>Clarifications in documentation about when spinlocks can be used.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 369431</ISSUE>
+        <TITLE>In RTAOSCfg, saving with an empty expiry point selected could cause unhandled exception</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 369432</ISSUE>
+        <TITLE>In RTAOsCfg, checking is done that the correct number of stack values are entered. Affects TriCore targets.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.2.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.2/1</ISSUE>
+        <TITLE>Modification 5.2.2/1</TITLE>
+        <DESCRIPTION>Prevents a spurious call to Os_Cbk_StackOverrunHook that could occur with Stack monitoring. This could only occur when using TerminateTask to leave an ECC task, and then only if an interrupt occurred within a small execution window.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 369431</ISSUE>
+        <TITLE>RTAOSCfg: Saving the project with the cursor in an empty cell on the ScheduleTable/Expiry Points pane could cause an unhandled exception</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 369432</ISSUE>
+        <TITLE>RTAOSCfg: The validation of stack values for multi-stack targets (TriCore) did not reject entries with fewer stack values than required. e.g. 16 instead of 16,64.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.2.1">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 359725</ISSUE>
+        <TITLE>When starting an ECC task, there was a small window where an ISR could interrupt and cause the stack overrun hook to be called when it was not necessary. Only affected systems with stack monitoring enabled.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 999999</ISSUE>
+        <TITLE>Fixes a small window with ECC tasks on multicore systems where setting an Event for a Task on a different core might not be detected immediately.</TITLE>
+        <DESCRIPTION></DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.2.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.0/1</ISSUE>
+        <TITLE>Modification 5.2.0/1</TITLE>
+        <DESCRIPTION>Spinlocks can be configured with a LockMethod, based on the AUTOSAR 4.1.1 proposed specification and with extra options.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.0/2</ISSUE>
+        <TITLE>Modification 5.2.0/2</TITLE>
+        <DESCRIPTION>Spinlocks can record usage statistics at run time. See the GetSpinlockInfo API.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.2.0/3</ISSUE>
+        <TITLE>Modification 5.2.0/3</TITLE>
+        <DESCRIPTION>The option -{}-debug:build_info may be available, depending on your license. This causes a .bat file to be emitted that shows the build steps that RTA-OS uses.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.2.0/4</ISSUE>
+        <TITLE>Modification 5.2.0/4</TITLE>
+        <DESCRIPTION>RTAOSCfg emits Alarm Actions within ECUC-CHOICE-CONTAINER-DEF rater than ECUC-PARAM-CONF-CONTAINER-DEF</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 354972</ISSUE>
+        <TITLE>When using hardware counters and starting alarms or schedule tables relative to the current time, it was sometimes possible for to skip the next counter interrupt if it was already due earlier than the interval being requested in this call.</TITLE>
+        <DESCRIPTION>Use software counters or absolute start times.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.1.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.1.3/1</ISSUE>
+        <TITLE>Modification 5.1.3/1</TITLE>
+        <DESCRIPTION>Added optional callbacks Os_Cbk_TaskStart and Os_Cbk_TaskEnd. These act like Pre/Post Task hooks but don&apos;t get called when the task is pre-empted.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.1.3/2</ISSUE>
+        <TITLE>Modification 5.1.3/2</TITLE>
+        <DESCRIPTION>Added optional callbacks Os_Cbk_ISRStart and Os_Cbk_ISREnd hooks. These get called when an Category 2 ISR starts/ends. They don&apos;t get called when the ISR is pre-empted.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.1.2">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.1.2/1</ISSUE>
+        <TITLE>Modification 5.1.2/1</TITLE>
+        <DESCRIPTION>Fixes issue introduced in 5.1.1 where a system with untrusted functions, but no untrusted tasks could make Os_Cbk_SetMemoryAccess for the wrong element when leaving CallTrustedFunction()</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.1.2/2</ISSUE>
+        <TITLE>Modification 5.1.2/2</TITLE>
+        <DESCRIPTION>Multicore configurations only: fix issue where TASK execution time monitoring could record incorrect values if preempted by a cross-core ISR.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.1.2/3</ISSUE>
+        <TITLE>Modification 5.1.2/3</TITLE>
+        <DESCRIPTION>Added 2 new macros: OS_ISRTYPE_TO_INDEX and OS_TASKTYPE_TO_INDEX. These convert an ISRType or TaskType to an index value in the range 0 to the number of ISRs/Tasks.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.1.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.1.1/1</ISSUE>
+        <TITLE>Modification 5.1.1/1</TITLE>
+        <DESCRIPTION>Support BAS licensing scheme.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.1.1/2</ISSUE>
+        <TITLE>Modification 5.1.1/2</TITLE>
+        <DESCRIPTION>Delayed task execution APIs have run-time checks for validity.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.1.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.1.0/1</ISSUE>
+        <TITLE>Modification 5.1.0/1</TITLE>
+        <DESCRIPTION>Release.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.95">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/1</ISSUE>
+        <TITLE>Modification 5.0.95/1</TITLE>
+        <DESCRIPTION>Fixes issue in GUI where deleting a TASK could result in deletion of OS Applications</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/2</ISSUE>
+        <TITLE>Modification 5.0.95/2</TITLE>
+        <DESCRIPTION>Fixes issue in GUI where window could start on a display that was no longer connected</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/3</ISSUE>
+        <TITLE>Modification 5.0.95/3</TITLE>
+        <DESCRIPTION>Fixes issue in GUI where -{}-env did not affect the build path</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/4</ISSUE>
+        <TITLE>Modification 5.0.95/4</TITLE>
+        <DESCRIPTION>Fixes issue in GUI where reloading a project would result in target configuration information being &apos;greyed out&apos;</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/5</ISSUE>
+        <TITLE>Modification 5.0.95/5</TITLE>
+        <DESCRIPTION>Fixes issue in GUI where relative paths are specified for include files. Such paths are relative to the project base directory.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.95/6</ISSUE>
+        <TITLE>Modification 5.0.95/6</TITLE>
+        <DESCRIPTION>Revised wording in GUI for Expiry Point advance/retard to match the AUTOSAR 4.0.3 form</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.95/7</ISSUE>
+        <TITLE>Modification 5.0.95/7</TITLE>
+        <DESCRIPTION>Partial support in GUI for OsAppEcucPartitionRef. The full path has to be entered manually. No checking is done.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.94">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.94/1</ISSUE>
+        <TITLE>Modification 5.0.94/1</TITLE>
+        <DESCRIPTION>Caters for the changed IOC configuration format for AUTOSAR 4.0.3</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.94/2</ISSUE>
+        <TITLE>Modification 5.0.94/2</TITLE>
+        <DESCRIPTION>Expands the documentation and examples around memory protection and Os_Cbk_SetMemoryAccess</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.93">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.93/1</ISSUE>
+        <TITLE>Modification 5.0.93/1</TITLE>
+        <DESCRIPTION>Support for AUTOSAR 3.2.2</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.93/2</ISSUE>
+        <TITLE>Modification 5.0.93/2</TITLE>
+        <DESCRIPTION>Slight update to AUTOSAR references in VSMD files</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.93/3</ISSUE>
+        <TITLE>Modification 5.0.93/3</TITLE>
+        <DESCRIPTION>Delayed Task Execution APIs</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.93/4</ISSUE>
+        <TITLE>Modification 5.0.93/4</TITLE>
+        <DESCRIPTION>&apos;Only Terminate Untrusted Applications&apos; optimization</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.92">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.92/1</ISSUE>
+        <TITLE>Modification 5.0.92/1</TITLE>
+        <DESCRIPTION>Supports 4.0.2 and 4.0.3 changes in XML (IOC / ScheduleTables)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.92/2</ISSUE>
+        <TITLE>Modification 5.0.92/2</TITLE>
+        <DESCRIPTION>Supports nested packages in the XML</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.91">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.91/1</ISSUE>
+        <TITLE>Modification 5.0.91/1</TITLE>
+        <DESCRIPTION>The VSMD files have been regenerated for each AUTOSAR version, using the ETAS_RTAOS root identifier</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.91/2</ISSUE>
+        <TITLE>Modification 5.0.91/2</TITLE>
+        <DESCRIPTION>Generated XML files reference ETAS_RTAOS rather than /AUTOSAR, /AUTOSAR/EcucDefs or /RTAOS/EcucDefs</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.91/3</ISSUE>
+        <TITLE>Modification 5.0.91/3</TITLE>
+        <DESCRIPTION>Generated XML files VALUE-REFs corrected (AUTOSAR 4)</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.91/4</ISSUE>
+        <TITLE>Modification 5.0.91/4</TITLE>
+        <DESCRIPTION>Generated XML files boolean values are emitted as NUMERICAL values (AUTOSAR 4)</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.90">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.90/1</ISSUE>
+        <TITLE>Modification 5.0.90/1</TITLE>
+        <DESCRIPTION>Fixes a possible race condition in multicore versions of WaitEvent</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.90/2</ISSUE>
+        <TITLE>Modification 5.0.90/2</TITLE>
+        <DESCRIPTION>The code in WaitEvent that checks for OS_ECC_WAIT error was testing the task&apos;s worst-case stack usage rather than the actual usage at the point of the call. This could make the stack allocation needed overly pessimistic.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>5.0.90/3</ISSUE>
+        <TITLE>Modification 5.0.90/3</TITLE>
+        <DESCRIPTION>The algorithm used for license checking has been modified to reduce the number of requests to the ETAS License Manager - particularly for licenses that are *usually* not found.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="5.0.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>5.0.0/1</ISSUE>
+        <TITLE>Modification 5.0.0/1</TITLE>
+        <DESCRIPTION>Release.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.94.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.94.0/1</ISSUE>
+        <TITLE>Modification 4.94.0/1</TITLE>
+        <DESCRIPTION>Initial cleanup and optimizations, specifically to reduce the number of calls to get core id in multicore applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.93.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.93.0/1</ISSUE>
+        <TITLE>Modification 4.93.0/1</TITLE>
+        <DESCRIPTION>Functionally complete AUTOSAR 4.0 and multicore. Not yet optimized.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.93.0/2</ISSUE>
+        <TITLE>Modification 4.93.0/2</TITLE>
+        <DESCRIPTION>Ensure that calls to Os_Cbk_SetMemoryAccess are done with interrupts locked.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.92.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.3/1</ISSUE>
+        <TITLE>Modification 4.92.3/1</TITLE>
+        <DESCRIPTION>Extended tasks work with multiple cores</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.3/2</ISSUE>
+        <TITLE>Modification 4.92.3/2</TITLE>
+        <DESCRIPTION>RES_SCHEDULER works across multiple cores</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.92.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.2/1</ISSUE>
+        <TITLE>Modification 4.92.2/1</TITLE>
+        <DESCRIPTION>Register sets work with multiple cores. A register set can include tasks and ISRs on different cores. The OS will use independent save areas for each core. Note that register sets cannot be used to protect data that is shared across cores - you will still need to use spinlocks for this.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.2/2</ISSUE>
+        <TITLE>Modification 4.92.2/2</TITLE>
+        <DESCRIPTION>Register sets preserve state across an ECC task WaitEvent call.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.2/3</ISSUE>
+        <TITLE>Modification 4.92.2/3</TITLE>
+        <DESCRIPTION>Experimental support for lightweight tasks in multicore if SC1 is selected.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.2/4</ISSUE>
+        <TITLE>Modification 4.92.2/4</TITLE>
+        <DESCRIPTION>Increased test coverage on single-core code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.92.2/5</ISSUE>
+        <TITLE>Modification 4.92.2/5</TITLE>
+        <DESCRIPTION>Significant refactoring of PC-lint/MISRA dismissals (work in progress). PC-lint version 9 is now being used.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.92.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/1</ISSUE>
+        <TITLE>Modification 4.92.1/1</TITLE>
+        <DESCRIPTION>Early access development release for RTA-OS5.0.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/2</ISSUE>
+        <TITLE>Modification 4.92.1/2</TITLE>
+        <DESCRIPTION>Refinements to target sample applications for multicore.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/3</ISSUE>
+        <TITLE>Modification 4.92.1/3</TITLE>
+        <DESCRIPTION>Minor change in GUI for the number of cores offered for assignment to OS applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/4</ISSUE>
+        <TITLE>Modification 4.92.1/4</TITLE>
+        <DESCRIPTION>Show OS Size Info report if selected after a build.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/5</ISSUE>
+        <TITLE>Modification 4.92.1/5</TITLE>
+        <DESCRIPTION>Show license manager on Help menu (if installed).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/6</ISSUE>
+        <TITLE>Modification 4.92.1/6</TITLE>
+        <DESCRIPTION>Remove restriction on max period for Schedule Table Assistant.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.92.1/7</ISSUE>
+        <TITLE>Modification 4.92.1/7</TITLE>
+        <DESCRIPTION>Updated splash/about screens.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.91.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.91.0/1</ISSUE>
+        <TITLE>Modification 4.91.0/1</TITLE>
+        <DESCRIPTION>Early access development release for RTA-OS5.0.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.91.0/2</ISSUE>
+        <TITLE>Modification 4.91.0/2</TITLE>
+        <DESCRIPTION>Preliminary support for AUTOSAR MultiCore OS, including: Starting cores, StartOS, BCC Tasks and ISRs running on different cores, Spinlocks, Resources, Reports. MultiCore elements NOT necessarily supported: ECC tasks, IOC, forced termination, RegisterSets, Trusted functions, Shutdown OS.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.2.2">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.2.2/1</ISSUE>
+        <TITLE>Modification 4.2.2/1</TITLE>
+        <DESCRIPTION>Ensure that calls to Os_Cbk_SetMemoryAccess are done with interrupts locked.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.2.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.2.0/1</ISSUE>
+        <TITLE>Modification 4.2.0/1</TITLE>
+        <DESCRIPTION>Beta release of RTA-OS 4.2. FunctionParams field added to structure passed to Os_Cbk_SetMemoryAccess. It gets used when calling an untrusted function.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.1.0">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.1.0/1</ISSUE>
+        <TITLE>Modification 4.1.0/1</TITLE>
+        <DESCRIPTION>Release of RTA-OS 4.1. No changes post 4.0.91.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.91">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.0.91/1</ISSUE>
+        <TITLE>Modification 4.0.91/1</TITLE>
+        <DESCRIPTION>Beta release of RTA-OS 4.1. GUI handling of sample applications fixed (SERN 20110125-DJL1). GUI code generation switch from EXTENDED to STANDARD status fixed (SERN 20101229-DJL2).</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.90">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.0.90/1</ISSUE>
+        <TITLE>Modification 4.0.90/1</TITLE>
+        <DESCRIPTION>First Beta release of RTA-OS 4.1</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.5">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249323</ISSUE>
+        <TITLE>Build size report in GUI</TITLE>
+        <DESCRIPTION>If a non-default output location for .html files was specified, post build reports would not open in the browser, though they would be created correctly.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.4">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249320</ISSUE>
+        <TITLE>Pessimistic stack size calculation for ISRs with the same priority</TITLE>
+        <DESCRIPTION>With ISRs at the same priority, the maximum stack calculation was pessimistic. It assumed that all ISRs could preempt each other. This only showed on systems where Schedule() was allowed.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.3/1</ISSUE>
+        <TITLE>Modification 4.0.3/1</TITLE>
+        <DESCRIPTION>IOC single-core</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249317</ISSUE>
+        <TITLE>Tracing with compact IDs and extended time</TITLE>
+        <DESCRIPTION>When tracing with compact ids and extended time, certain targets would read the stopwatch twice per record (once for each 16 bits). Where the 2 reads straddled a 0x1_0000 boundary, the time recorded appeared to jump backwards.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249318</ISSUE>
+        <TITLE>Large trace buffers and serial links</TITLE>
+        <DESCRIPTION>Serial links are restricted to 64K frames by RTA-TRACE. The RTA-OS code was trying to limit transmission to 64K, but not including follow-on frames where the buffer size was larger than the frame. It could also mis-calculate the size and crash RTA-TRACE Server.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.2/1</ISSUE>
+        <TITLE>Modification 4.0.2/1</TITLE>
+        <DESCRIPTION>For each build, the tool will generate a log file projectname.log that contains a copy of the text that the tool and compiler output to the screen.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.2/2</ISSUE>
+        <TITLE>Modification 4.0.2/2</TITLE>
+        <DESCRIPTION>A batch file named projectname_prebuild.bat can be used to run user-specified code just before the start of a build.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.2/3</ISSUE>
+        <TITLE>Modification 4.0.2/3</TITLE>
+        <DESCRIPTION>A batch file named projectname_postbuild.bat can be used to run user-specified code just after the end of a build.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.2/4</ISSUE>
+        <TITLE>Modification 4.0.2/4</TITLE>
+        <DESCRIPTION>Where the command-line options - -debug:source and - -nobuild are used together, the source code will be generated without the tool requiring a compiler to be available.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.2/5</ISSUE>
+        <TITLE>Modification 4.0.2/5</TITLE>
+        <DESCRIPTION>The GUI can be directed to store only relative paths in the .rtaos file.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249311</ISSUE>
+        <TITLE>SetEvent</TITLE>
+        <DESCRIPTION>If 2 events were set for a waiting ECC task before it was able to resume, then the task could appear to be reactivated twice. This only happened on systems where any task had multiple activations, or where tasks shared a priority.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249312</ISSUE>
+        <TITLE>Register sets</TITLE>
+        <DESCRIPTION>If an ISR was saving or restoring a register set and a higher prio isr fired then the higher prio isr could save over the same set that the lower one was using. Only affected some of the simpler configurations. Would not occur with stack monitoring, time monitoring or memory protection present.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.1/1</ISSUE>
+        <TITLE>Modification 4.0.1/1</TITLE>
+        <DESCRIPTION>AUTOSAR 4.0 API is supported in addition to AUTOSAR 3.x. The API selected depends upon the AUTOSAR XML version used to configure the project. AUTOSAR 4.0 tightens some previously unspecified behaviors and adds state to OS-Applications. TerminateApplication gains the ability to terminate a specified OS-Application.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.0.1/2</ISSUE>
+        <TITLE>Modification 4.0.1/2</TITLE>
+        <DESCRIPTION>Hooks and callbacks are declared using FUNC(void, OS_CALLOUT_CODE) Os_Cbk_... rather than FUNC(void, OS_APPL_CODE) Os_Cbk_... to be compatible with AUTOSAR 4.0. For compatibility, OS_CALLOUT_CODE is defined as OS_APPL_CODE unless it already exists in Os_Compiler_Cfg.h</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="4.0.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.0/1</ISSUE>
+        <TITLE>Modification 4.0.0/1</TITLE>
+        <DESCRIPTION>Support for AUTOSAR 4.0 XML, but not the 4.0 API changes. These are planned for the next release.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.0/2</ISSUE>
+        <TITLE>Modification 4.0.0/2</TITLE>
+        <DESCRIPTION>Split Configuration is supported in rtaoscfg.exe.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.0/3</ISSUE>
+        <TITLE>Modification 4.0.0/3</TITLE>
+        <DESCRIPTION>Function pointers can be created to most of the OS APIs. Not StartOS/TerminateTask/ChainTask.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>4.0.0/4</ISSUE>
+        <TITLE>Modification 4.0.0/4</TITLE>
+        <DESCRIPTION>Added API GetTaskActivationTime()</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>4.0.0/5</ISSUE>
+        <TITLE>Modification 4.0.0/5</TITLE>
+        <DESCRIPTION>Moved default installation location to c:/etas/rta-os</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249288</ISSUE>
+        <TITLE>NextScheduleTable</TITLE>
+        <DESCRIPTION>A repeating ScheduleTable X, that had been &apos;nexted&apos; to ScheduleTable Y and then &apos;nexted&apos; from Y would run once and then try to &apos;next&apos; to Y rather than repeat X.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 249284</ISSUE>
+        <TITLE>Terminating Applications</TITLE>
+        <DESCRIPTION>If a task activated by an ISR faulted and the protection hook was told to kill the OS Application, a null reference could occur in the interrupt wrapper.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+  </COMPONENT>
+</RELEASE-NOTES>
+

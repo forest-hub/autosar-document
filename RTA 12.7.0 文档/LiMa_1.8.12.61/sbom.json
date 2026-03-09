@@ -1,0 +1,175 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:2c38d25a-b2b2-4551-94a1-4cf3ea7ef526",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2024-11-06T15:43:04Z",
+    "tools" : [
+      {
+        "vendor" : "OWASP",
+        "name" : "Dependency-Track",
+        "version" : "4.12.1"
+      }
+    ],
+    "component" : {
+      "type" : "application",
+      "bom-ref" : "f3974311-4b40-4c8c-bdd8-f5d26e23cd10",
+      "name" : "eci.etaslm.lima.lima",
+      "version" : "release/1.8.12"
+    }
+  },
+  "components" : [
+    {
+      "type" : "library",
+      "bom-ref" : "1e6199d3-301e-4a6c-9d0e-910dfae4b74e",
+      "author" : "Conan",
+      "name" : "boost",
+      "version" : "1.85.0",
+      "description" : "Boost provides free peer-reviewed portable C++ source libraries",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSL-1.0"
+          }
+        }
+      ],
+      "purl" : "pkg:conan/boost@1.85.0?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=8050df433bd49bb19811ef3e3cf1d0b7"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "d1905a30-7c59-4bf6-8467-6d0e35b3a78a",
+      "author" : "Conan",
+      "name" : "flexerafne",
+      "version" : "2019.04.0.0",
+      "purl" : "pkg:conan/flexerafne@2019.04.0.0?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=b006eeff96eba518f4ff215a0ec6fce2&user=lima"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "d1ca2742-5f8b-46d6-b6ba-7d78ab0c6c8d",
+      "author" : "Conan",
+      "name" : "flexerafnp",
+      "version" : "11.15.1.0",
+      "purl" : "pkg:conan/flexerafnp@11.15.1.0?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=e9125f7f27d26cd68642eddc2b15ce25&user=lima"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "0f74e3ba-dd34-475a-bc30-350b16b3e40f",
+      "author" : "Conan",
+      "name" : "gtest",
+      "version" : "1.14.0",
+      "description" : "Google's C++ test framework",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:conan/gtest@1.14.0?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=25e2a474b4d1aecf5ff4f0555dcdf72c"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "01c6dec7-5a76-4c74-8984-ef17934eaab7",
+      "author" : "Conan",
+      "name" : "libcurl",
+      "version" : "8.8.0",
+      "description" : "command line tool and library for transferring data with URLs",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "curl"
+          }
+        }
+      ],
+      "purl" : "pkg:conan/libcurl@8.8.0?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=a65e340ca1c7b3de52622d81540e5640"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "eb19a823-c71a-4615-89fe-df38847c78c7",
+      "name" : "Microsoft Visual C++ Redistributable (VCredist)",
+      "version" : "14.38.33130.0"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "49d6291b-3a51-46ef-9934-d4e8349b700b",
+      "author" : "Conan",
+      "name" : "openssl",
+      "version" : "3.2.2",
+      "description" : "A toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:conan/openssl@3.2.2?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=659d6905eb65047662567895cc973ff7"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "8e8a9bf0-e224-46bb-aafa-571e4510399f",
+      "author" : "Conan",
+      "name" : "protobuf",
+      "version" : "3.21.12",
+      "description" : "Protocol Buffers - Google's data interchange format",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:conan/protobuf@3.21.12?repository_url=https%3A%2F%2Fartifactory.etas-dev.com%2Fartifactory%2Fapi%2Fconan%2Feci_eci_divaprod-conan-dev&rref=2099e6c66fcd31b52c3afc0c096c1d02"
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "c7dd1ae4-75df-45d1-b8eb-5493badbab0b",
+      "name" : "QT",
+      "version" : "5.15.17",
+      "cpe" : "cpe:2.3:a:qt:qt:5.15.17:*:*:*:*:*:*:*"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "f3974311-4b40-4c8c-bdd8-f5d26e23cd10",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "1e6199d3-301e-4a6c-9d0e-910dfae4b74e",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "d1905a30-7c59-4bf6-8467-6d0e35b3a78a",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "d1ca2742-5f8b-46d6-b6ba-7d78ab0c6c8d",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "0f74e3ba-dd34-475a-bc30-350b16b3e40f",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "01c6dec7-5a76-4c74-8984-ef17934eaab7",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "eb19a823-c71a-4615-89fe-df38847c78c7",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "49d6291b-3a51-46ef-9934-d4e8349b700b",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "8e8a9bf0-e224-46bb-aafa-571e4510399f",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "c7dd1ae4-75df-45d1-b8eb-5493badbab0b",
+      "dependsOn" : [ ]
+    }
+  ]
+}

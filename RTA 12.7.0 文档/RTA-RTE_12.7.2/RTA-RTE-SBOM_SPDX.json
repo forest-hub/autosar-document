@@ -1,0 +1,157 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "SBOM for ETAS-RTA-RTE",
+  "documentNamespace": "http://spdx.org/spdxdocs/spdx-ETAS-RTA-RTE",
+  "documentDescribes": [
+    "SPDXRef-ETAS-RTA-RTE"
+  ],
+  "creationInfo": {
+    "comment": "Created from ETAS-RTA-RTE",
+    "created": "2025-05-27T12:12:16Z",
+    "creators": [
+      "Organization: ETAS-GmbH"
+    ],
+    "licenseListVersion": "3.17"
+  },
+  "packages": [
+    {
+      "name": "RTEGen",
+      "SPDXID": "SPDXRef-ETAS-RTA-RTE",
+      "versionInfo": "12.7.2",
+      "supplier": "Organization: ETAS-GmbH",
+      "downloadLocation": "https://www.etas.com/en/products/download_center.php",
+      "filesAnalyzed": false,
+      "licenseConcluded": "(LicenseRef-1 AND Apache-2.0 AND MIT AND LicenseRef-2 AND LicenseRef-3 AND LicenseRef-4 AND LicenseRef-5)",
+      "licenseDeclared": "(LicenseRef-1)",
+      "copyrightText": "Copyright ETAS GmbH 2025",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:etas:rta_rte:12.7.2:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    },
+    {
+      "name": "Apache-XML-Xerces-C++",
+      "SPDXID": "SPDXRef-apache-xerces-cpp",
+      "versionInfo": "3.2.5",
+      "filesAnalyzed": false,
+      "downloadLocation": "https://xerces.apache.org/xerces-c/download.cgi",
+      "licenseConcluded": "(Apache-2.0)",
+      "licenseDeclared": "(Apache-2.0)",
+      "copyrightText": "Copyright © 1999-2018 Apache Software Foundation",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:apache:xerces-c\\+\\+:3.2.5:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    },
+    {
+      "name": "Boost-C++-Libraries",
+      "SPDXID": "SPDXRef-boost",
+      "versionInfo": "1.85.0",
+      "filesAnalyzed": false,
+      "downloadLocation": "https://www.boost.org/users/download/",
+      "licenseConcluded": "(LicenseRef-3 AND LicenseRef-4 AND LicenseRef-5)",
+      "licenseDeclared": "(LicenseRef-3 AND LicenseRef-4 AND LicenseRef-5)",
+      "copyrightText": "Copyright Pavol Droba 2002-2006.,  Copyright © Marshall Clow 2008-2012, 2014, 2017.,  Copyright © T. Zachary Laine 2018. © Copyright Herve Bronnimann 2004.  Copyright © Ivan Matek, Marshall Clow 2021.  Copyright © 2016, 2017 Alexander Zaitsev <zamazan4ik@gmail.com>, Copyright © 2010 Nuovation System Designs, LLC Grant Erickson <gerickson@nuovations.com>,  Copyright 2008 Adobe Systems Incorporated, Copyright 2015 NumScale SAS,   Copyright 2015 LRI UMR 8623 CNRS/University Paris Sud XI,   Copyright 2014-2023 Glen Joseph Fernandes (glenjofe@gmail.com), Copyright 2013, 2020-2024 Antony Polukhin, Copyright 2019-2021 Ruslan Arutyunyan, © Copyright 2002, 2004, 2005, 2007, 2009 Robert Ramey - http://www.rrsd.com, Copyright © 2001 Ronald Garcia, Indiana University (garcia@osl.iu.edu) Andrew Lumsdaine, Indiana University (lums@osl.iu.edu).,  Copyright © 2001, Daniel C. Nuffer,   Copyright 2001, 2002, 2005 Daryle Walker.,  Copyright © 2003-2024 Christopher M. Kohlhoff (chris at kohlhoff dot com),  Copyright © 2021-2023 Klemens D. Morgenstern (klemens dot morgenstern at gmx dot net),  Copyright © 2008 Rep Invariant Systems, Inc. (info@repinvariant.com),  Copyright © 2011 Boris Schaeling (boris@highscore.de),  Copyright © 2005 Voipster / Indrek dot Juhani at voipster dot com,  Copyright © 2005 Stefan Arentz (stefan at soze dot com),  Copyright © 2008 Roelof Naude (roelof.naude at gmail dot com),  Copyright © 2003-2024 Oliver Kowalke (oliver dot kowalke at gmail dot com), Copyright Thorsten Ottosen 2003-2006, Copyright © 2007-2024 Andrey Semashev,  Copyright © 2009-2011 Helge Bahmann,  Copyright © 2012, 2013 Tim Blechmann,  Copyright © 2009 Phil Endecott,  Copyright © 2001-2007, 2009, 2010, 2012 Hartmut Kaiser,  Copyright © 2013 Tim Blechmann ARM Code by Phil Endecott, Copyright © 2006-2007 Matias Capeletto, Copyright © 2003-2013, 2022, 2024 Joaquin M Lopez Munoz, Copyright © 2001-2003 Peter Dimov and Multi Media Ltd.,  Copyright 2001-2006 David Abrahams,  Copyright 2001-2009, 2013-2024 Peter Dimov,  Copyright 2009 Steven Watanabe, Copyright 2001, 2003, 2008 Howard Hinnant,   Copyright 1994, 1999-2003, 2002-2011, 2013-2015 Beman Dawes,   Copyright © Microsoft Corporation 2014,    Copyright Christopher Brown 2013,   Copyright 2009-2012 Vicente J. Botet Escriba,   Copyright © 2003-2008 Jan Gaspar, Copyright © 2013 Paul A. Bristow, Copyright John Maddock 2000, 2002-2021,  © Copyright 2000-2002 Darin Adler,  © Copyright 2002-2004 Aleksey Gurtovoy,  Copyright © 2017 Dynatrace,  © Copyright Jens Maurer 2001-2003.,  © Copyright Toon Knapen 2003.,  © Copyright Douglas Gregor 2002-2006, 2008, 2010,  © Copyright Boris Gubenko 2006, 2007. , Copyright Nuxi, https://nuxi.nl/ 2015.),  Copyright © Dan Watkins 2003, Copyright © Christof Meerwald 2003,  Copyright © 2010 Eric Jourdanneau, Joel Falcou,  Copyright © 2003 - 2004, 2008 Gennaro Prota,  Copyright © 2003 Eric Friedman,  Copyright © 2002 Bill Kempf,  Copyright 2017, NVIDIA CORPORATION.,  Copyright 2013, 2017, 2018 Cray, Inc., © Copyright Ion Gaztanaga 2005-2022, 2024,  © Copyright Pablo Halpern 2009, © Copyright Benedek Thaler 2015-2016, Copyright © 2012-2014 Adam Wulkiewicz, Lodz, Poland, Copyright © 2011-2013 Andrew Hundt, Copyright © 2000 Stephen Cleary, Copyright 2007 Alexandre Courpron, Copyright 2005-2014, 2017 Daniel James, Copyright © 2012 Anthony Williams, Copyright © 2007, 2008 Steven Watanabe, Joseph Gauterin, Niels Dekker,  Copyright © 2014 Agustin Berge,  Copyright © 2003 Daniel Frey,  Copyright © 2002 Brad King (brad.king@kitware.com), Douglas Gregor (gregod@cs.rpi.edu),  Copyright © 1999-2003 Jaakko Jarvi (jaakko.jarvi@cs.utu.fi),  Copyright 2003 © The Trustees of Indiana University.,  © Copyright 2004 Pavel Vozenilek., Copyright © 2002-2020 CrystalClear Software, Inc. Author: Jeff Garland, Bart Garst Date$, © Copyright Steve Cleary, Beman Dawes,Howard Hinnant & John Maddock 2000.,  Copyright © 2014 Glen Fernandes,  Copyright © 1996 Silicon Graphics Computer Systems, Inc.,  Copyright © 1994 Hewlett-Packard Company,  Copyright © 2013 John Maddock, Antony Polukhin,  Copyright © 2010, 2011 Bryce Lelbach,  Copyright Alexander Nasonov & Paul A. Bristow 2006.,  © Copyright Matthias Troyerk 2006.,  © Copyright Jeremy Siek 2001., Copyright © 2003-2006, 2008 Gennaro Prota,  Copyright © 2001-2002 Chuck Allison and Jeremy Siek,   Copyright © 2018 Evgeny Shulgin,   Copyright © 2015 Seth Heeren,  Copyright © 2014 Riccardo Marcangelo,   Copyright © 2014 Ahmed Charles, Copyright © 2012 David Stone, Copyright © 2006-2013 Emil Dotchevski and Reverge Studios, Inc., Copyright © 2007, 2024 Emil Dotchevski, Copyright © 2019 Dario Menendez, Banco Santander, Copyright Vladimir Prus 2002,  Copyright Jan Langer 2002,  Copyright Dietmar Kuehl 2001, Copyright Samuel Krempp 2003., © Copyright 2006-2008 Tobias Schwinger, Copyright © 2009-2012 Lorenzo Caminiti, Copyright © 2001-2013 Joel de Guzman,  Copyright © 2005-2007 Dan Marsden,  Copyright © 2005, 2006,2011, 2014 Eric Niebler,  Copyright © 2009-2011 Christopher Schmidt,  Copyright © 2012-2015, 2017, 2018 Kohei Takahashi,  Copyright © 2013, 2014 Damien Buhl,  Copyright © 2013 Mateusz Loskot,  Copyright © 2021, 2022 Denis Mikhailov,  Copyright © 1999-2003 Jeremiah Willcock,  Copyright © 2013, 2014 Jamboree,  Copyright © 2012 Nathan Ridge,  Copyright © 2005, 2006 Joao Abecasis,  Copyright © 2014 Christoph Weiss,  Copyright © 2011 Brandon Kohn,  Copyright Paul Mensonides 2003,  Copyright © 2016 Lee Clagett,  Copyright © 2015 Agustin K-ballo Berge,  Copyright © 2011 Thomas Heller,  Copyright © 2001 Doug Gregor, Copyright 1997-2001 University of Notre Dame. Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek,  Copyright 2004-2010, 2012 The Trustees of Indiana University.,  © Copyright 2007-2009 Andrew Sutton,  Copyright 1997-2001 University of Notre Dame.,  Copyright 2005, 2007 Aaron Windsor,  Copyright 2002 Indiana University. Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek,  Copyright © 2004, 2007 Douglas Gregor <doug.gregor@gmail.com>,  Copyright 2013 University of Warsaw. Authors: Piotr Wygocki,  Copyright 2009 Trustees of Indiana University. Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek, Michael Hansen,  Copyright 2004, 2005 Trustees of Indiana University Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek, Doug Gregor,,  Copyright 2002 Marc Wintermantel (wintermantel@even-ag.ch) ETH Zurich, Center of Structure Technologies https://web.archi,  Copyright 1997-2000 University of Notre Dame. Authors: Jeremy G. Siek, Andrew Lumsdaine, Lie-Quan Lee,  © Copyright Jeremy Siek 1999, 2001.,  Copyright Daniel Wallin 2007.,  Copyright Daniel Trebbien 2010.,  Copyright © 2007 Matthias Troyer <troyer@boost-consulting.com>,  Copyright © 2006, Stephan Diederich,  Copyright 2010 Thomas Claveirole Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek, Thomas Claveirole,  Copyright 2009 Trustees of Indiana University. Authors: Michael Hansen, Andrew Lumsdaine,  Copyright 2003 Jeremy Siek Authors: Lie-Quan Lee, Jeremy Siek, and Douglas Gregor,  Copyright Michael Drexl 2005, 2006.,  Copyright Louis Dionne 2013,  Copyright © Vladimir Prus 2003 Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek,  Copyright © Jeremy Siek 2001, Marc Wintermantel 2002,  Copyright © 2018 Yi Ji,  Copyright © 2013 Jakob Lykke Andersen, University of Southern Denmark jlandersen@imada.sdu.dk),  Copyright © 2012, Michele Caini.,  Copyright © 2012 Flavio De Lorenzi (fdlorenzi@gmail.com),  Copyright © 2010 Matthias Walter (xammy@xammy.homelinux.net),  Copyright © 2007 Hartmut Kaiser,  Copyright © 2007 Douglas Gregor and Matthias Troyer,  Copyright © 2006 Tiago de Paula Peixoto <tiago@forked.de>,  Copyright © 2006-2009 Dmitry Bufistov and Andrey Parfenov,  Copyright © 2005-2009 Jongsoo Park <jongsoo.park -at- gmail.com>,  Copyright © 2004 Kristopher Beevers,  Copyright © 2002 Brad King and Douglas Gregor,  Copyright © 2001 Vladimir Prus <ghost@cs.msu.su> Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek, Douglas Grego,  Copyright © 2001 Vladimir Prus <ghost@cs.msu.su>,  Copyright © 2001 Jeremy Siek, Douglas Gregor, Brian Osman,  Copyright 2013 Maciej Piechotka Authors: Maciej Piechotka,  Copyright 2012 Fernando Vilas, Copyright 2009 Trustees of Indiana University Authors: Jeremiah J. Willcock, Andrew Lumsdaine,  Copyright 2009 Trustees of Indiana University Author: Jeremiah Willcock,  Copyright 2008 Author: Matyas W Egyhazy,  Copyright 2007 University of Karlsruhe Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek, Douglas Gregor, Jens Muel,  Copyright 2007 Stanford University Authors: David Gleich,  Copyright 2006 Trustees of Indiana University Authors: Jeremy G. Siek and Douglas Gregor <dgregor@cs.indiana.edu>,  Copyright 2005 Trustees of Indiana University Authors: Andrew Lumsdaine, Douglas Gregor,  Copyright 2005 Jeremy G. Siek Authors: Jeremy G. Siek,  Copyright 2004 The Trustees of Indiana University Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek,  Copyright 2003 Bruce Barr Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek,  Copyright 2002 Rensselaer Polytechnic Institute,  Copyright 2002 Indiana University.,  Copyright 2002 Brad King and Douglas Gregor,  Copyright 2001 University of Notre Dame. Authors: Jeremy G. Siek and Lie-Quan Lee,  Copyright 2001 Universite Joseph Fourier, Grenoble. Author: Francois Faure,  Copyright 2001 Indiana University Author: Jeremy G. Siek,  Copyright 1997-2001 University of Notre Dame. Authors: Lie-Quan Lee, Jeremy Siek,  Copyright 1997-2001 University of Notre Dame. Authors: Jeremy G. Siek, Lie-Quan Lee, Andrew Lumsdaine,  © Copyright Juergen Hunold 2008,  © Copyright Francois Faure, iMAGIS-GRAVIR / UJF, 2001.,  © Copyright David Abrahams 2000.,  © Copyright 2009 Eric Bose-Wolfler, © Copyright Nick Thompson 2018., Copyright © 2003 Vesa Karvonen., © Copyright Jeremy William Murphy 2016., © Copyright Olaf Krzikalla 2004-2006.,  Copyright © 2004 Ralf Mattethat,  © Copyright Daniel Steck 2021,  © Copyright Daniel K. O. 2005.,  © Copyright 2022 Christian Mazakas",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:boost:boost:1.85.0:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    },
+    {
+      "name": "OpenSSL",
+      "SPDXID": "SPDXRef-openssl",
+      "versionInfo": "3.3.1",
+      "filesAnalyzed": false,
+      "downloadLocation": "https://www.openssl.org/source/",
+      "licenseConcluded": "(Apache-2.0 AND LicenseRef-2)",
+      "licenseDeclared": "(Apache-2.0 AND LicenseRef-2)",
+      "copyrightText": "Copyright 1995-2024 The OpenSSL Project Authors. All Rights Reserved., Copyright © 2002, 2019 Oracle and/or its affiliates. All rights reserved., Copyright 2005, 2007-2019 Nokia. All rights reserved.,Copyright © 2006, Network Resonance, Inc., Copyright (© 2011, RTFM, Inc., Copyright © 2004, EdelKey Project. All Rights Reserved., Copyright © 2007 KISA(Korea Information Security Agency). All rights reserved., Copyright Siemens AG 2015-2020, Copyright © 2004, EdelKey Project. All rights reserved.",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:openssl:openssl:3.3.1:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    },
+    {
+      "name": "StandardLibraryReferenceWrapper",
+      "SPDXID": "SPDXRef-StandardLibraryReferenceWrapper",
+      "versionInfo": "1.0.0",
+      "filesAnalyzed": false,
+      "downloadLocation": "https://www.etas.com/en/products/download_center.php",
+      "licenseConcluded": "(MIT)",
+      "licenseDeclared": "(MIT)",
+      "copyrightText": "copyright 2015 Steve Lorimer",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:etas:rta_rte:12.7.2:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relatedSpdxElement": "SPDXRef-ETAS-RTA-RTE",
+      "relationshipType": "DESCRIBES"
+    },
+    {
+      "spdxElementId": "SPDXRef-ETAS-RTA-RTE",
+      "relatedSpdxElement": "SPDXRef-apache-xerces-cpp",
+      "relationshipType": "DEPENDS_ON"
+    },
+    {
+      "spdxElementId": "SPDXRef-ETAS-RTA-RTE",
+      "relatedSpdxElement": "SPDXRef-boost",
+      "relationshipType": "DEPENDS_ON"
+    },
+    {
+      "spdxElementId": "SPDXRef-ETAS-RTA-RTE",
+      "relatedSpdxElement": "SPDXRef-openssl",
+      "relationshipType": "DEPENDS_ON"
+    },
+    {
+      "spdxElementId": "SPDXRef-ETAS-RTA-RTE",
+      "relatedSpdxElement": "SPDXRef-StandardLibraryReferenceWrapper",
+      "relationshipType": "DEPENDS_ON"
+    }
+  ],
+  "hasExtractedLicensingInfos": [
+    {
+      "licenseId": "LicenseRef-1",
+      "extractedText": "End User License Agreement\n\nRTA-RTE \n\nARTICLE I. GRANT OF LICENSE\nSubject to the provisions contained herein, ETAS GmbH, Borsigstrasse 24, 70469 Stuttgart, Germany, or an affiliate of ETAS GmbH (hereinafter collectively referred to as \"Licensor\"), either directly or through a designated ETAS reseller, hereby grants to the Licensee a non-exclusive, timely unlimited, non-transferable, non-sublicensable, revocable right to use Software RTA-RTE and supporting utilities(hereinafter referred to as \"Software\"), a proprietary software tool, and any materials provided to the Licensee by Licensor in connection with the license grant, such as documentation and demonstration material.\nLicensee shall be entitled to make archival and/or backup copies of the Software.\nARTICLE II. RESTRICTIONS ON USE\nLicensee shall - except as expressly agreed between the Parties in writing or as permitted in this Agreement - not, (i) use or copy the Software; (ii) modify, adapt, translate, reverse engineer, decompile, disassemble the Software or create derivative works thereof; (iii) rent, lease, sublicense, transfer, or distribute the Software or grant any rights to use it. Depending on the license model (e.g. machine-based, user named, floating) agreed upon between the parties in the individual case, usage may be restricted to a certain number of simultaneous executions of the Software.\nARTICLE III. PROPRIETARY RIGHTS OF LICENSOR\nLicensor retains all rights, title and interest in the Software, including any modification, updates, improvements, enhancements or extraction thereof. The Licensee acknowledges that Licensor retains exclusive ownership and title in the trademarks represented by its company name and logo as well as product names. The Licensee will not remove, delete or modify any copyright or other proprietary notice or any other attributions from the Software.\nARTICLE IV. LIMITED WARRANTY POLICY, LIMITED LIABILITY\nTHE USE OF SOFTWARE SHALL BE SUBJECT TO THE WARRANTY AND LIABILITY PROVISIONS SET FORTH IN THE APPLICABLE TERMS AND CONDITIONS OR AS AGREED UPON BETWEEN THE PARTIES.\nIF THE LICENSE GRANT IS PROVIDED FREE OF CHARGE, THE LICENSOR ASSUMES WARRANTY ONLY FOR DEFECTS AS TO QUALITY AND DEFECTS IN TITLE IF AND TO THE EXTENT THAT IT HAS MALICIOUSLY CONCEALED ANY SUCH DEFECT AS TO QUALITY OR IN TITLE. BEYOND THIS, THE LICENSOR, ITS LEGAL REPRESENTATIVES AND VICARIOUS AGENTS SHALL ONLY BE LIABLE FOR DAMAGES RESULTING FROM DELIBERATE OR GROSSLY NEGLIGENT MISCONDUCT OF THE LICENSOR. CLAIMS IN ACCORDANCE WITH APPLICABLE PRODUCT LIABILITY LAWS SHALL REMAIN UNAFFECTED.\nTHE LICENSOR DOES NOT ACCEPT LIABILITY FOR DAMAGES RESULTING FROM IMPROPER OPERATION (WHICH IS NOT IN ACCORDANCE WITH THE SOFTWARE SPECIFICATIONS) OR OPERATION IN A MANNER THAT IS CONTRARY TO THIS AGREEMENT. ANY RISK ARISING FROM THE USE OR PERFORMANCE OF THE SOFTWARE SHALL LIE WITH THE LICENSEE. THE LICENSEE SHALL BE RESPONSIBLE TO VERIFY AND SECURE ANY RESULTS OBTAINED FROM THE USE OF THE SOFTWARE, IN PARTICULAR WITH RESPECT TO ACCURACY, SAFETY AND SECURITY.\nARTICLE V. LICENSEE’S SUBMISSION\nThis Agreement does not obligate the Licensee to provide Licensor with materials, information, comments, suggestions or other communication regarding the Software. However, the Licensee agrees that any material, information, comments, suggestions or other communication the Licensee transmits or posts to Licensor (including but not limited to, submissions to Licensor’s 1st level support and/or other customer support websites or online portals) or provide to Licensor under this Agreement related to the features, functions, performance or use of the Software are deemed non-confidential and non-proprietary (\"Communications\"). Licensor will have no obligations with respect to the Communications.\nThe Licensee hereby grants to Licensor, its subsidiaries and affiliates, a non-exclusive, perpetual, irrevocable, royalty-free, worldwide license to copy, modify, create derivative works, publicly display, disclose, distribute, license and sublicense through multiple tiers of distribution and Licensees, incorporate and otherwise use the Communications and all data, images, sounds, text, and other things embodied therein, including derivative works thereto, for any and all commercial or non-commercial purposes.\nNothing in this Agreement will be construed as preventing Licensor from implementing independently-developed enhancements to Licensor’s own error diagnosis methodology to detect errors or defects in Licensor’s products discovered while reviewing Communications or to implement bug fixes or enhancements in Licensor’s products. The foregoing may include the right to include Communications in regression test suites.\nARTICLE VI. THIRD PARTY PROGRAMS\nThe SOFTWARE may contain third party programs or materials that are governed by third parties’ license terms, including without limitation, open source software. Comprehensive information about such third party programs or materials as well as any applicable license terms may be found in the Open Source Software Attributions document, which is part of the Software delivery. By installing and using the Software or any part thereof, the Licensee accepts any applicable third party license terms.\nARTICLE VII. COMPLIANCE WITH LAW, EXPORT CONTROLS\nThe Licensee agrees to comply with all applicable export laws and restrictions and regulations of the European Union, the United States or any other relevant foreign agency or authority. The Licensee agrees not to export, or allow the export or re-export of the Software, in violation of any such restrictions, laws or regulations. The Licensee represents and warrants that it is not located in, under the control of, or a national or resident of any restricted country and that it is not listed on any EU or U.S. Government list of prohibited or restricted parties.\nARTICLE XII. MISCELLANEOUS\nIn the event any part of this Agreement is invalidated by court or legislative action of competent jurisdiction, the remainder of this Agreement shall remain in binding effect. This Agreement may only be changed by mutual written consent.\n",
+      "comment": "Refer to the End User License Agreement document 'EULA.pdf' that ships with each installer for RTA-RTE."
+    },
+    {
+      "licenseId": "LicenseRef-2",
+      "extractedText": "BSD Axis License"
+    },
+    {
+      "licenseId": "LicenseRef-3",
+      "extractedText": "License for Ronald Garcia"
+    },
+    {
+      "licenseId": "LicenseRef-4",
+      "extractedText": "Silicon Graphics License"
+    },
+    {
+      "licenseId": "LicenseRef-5",
+      "extractedText": "Ralf Mattethat License"
+    }
+  ]
+}
+

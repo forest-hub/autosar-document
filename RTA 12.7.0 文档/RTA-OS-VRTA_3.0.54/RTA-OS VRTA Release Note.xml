@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RELEASE-NOTES schemaVersion="1.0">
+  <COMPONENT deliverable="RTA-OS-TARGET" name="VRTA">
+    <VERSION value="3.0.54">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.54/1</ISSUE>
+        <TITLE>Modification 3.0.54/1</TITLE>
+        <DESCRIPTION>Modified to accept more recent versions of the VS2022 compiler.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.54/2</ISSUE>
+        <TITLE>Modification 3.0.54/2</TITLE>
+        <DESCRIPTION>Interrupt vectors moved from a VECTORS memory section to CONST.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.54/3</ISSUE>
+        <TITLE>Modification 3.0.54/3</TITLE>
+        <DESCRIPTION>MCAL files updated and bug-fixed.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.53">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.53/1</ISSUE>
+        <TITLE>Modification 3.0.53/1</TITLE>
+        <DESCRIPTION>Support for loading a VECU inside a user-written executable is added. See the information about vrtaInProcessAPI.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.53/2</ISSUE>
+        <TITLE>Modification 3.0.53/2</TITLE>
+        <DESCRIPTION>VECUs have a new command-line option -noserver that tells them not to try to contact vrtaServer.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.53/3</ISSUE>
+        <TITLE>Modification 3.0.53/3</TITLE>
+        <DESCRIPTION>MCAL files updated and bug-fixed (RTAOS-6267).</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.52">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.52/1</ISSUE>
+        <TITLE>Modification 3.0.52/1</TITLE>
+        <DESCRIPTION>A SPDX SBOM document has been added.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.52/2</ISSUE>
+        <TITLE>Modification 3.0.52/2</TITLE>
+        <DESCRIPTION>The initialization of the virtual logger device has been updated for compiler portability.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.52/3</ISSUE>
+        <TITLE>Modification 3.0.52/3</TITLE>
+        <DESCRIPTION>The VS2022 variant compiles for C99 compatibility.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.52/4</ISSUE>
+        <TITLE>Modification 3.0.52/4</TITLE>
+        <DESCRIPTION>The MinGW variant has been tested with MinGW version 12.2.0</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.52/5</ISSUE>
+        <TITLE>Modification 3.0.52/5</TITLE>
+        <DESCRIPTION>MCAL files updated and bug-fixed.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.51">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.51/1</ISSUE>
+        <TITLE>Modification 3.0.51/1</TITLE>
+        <DESCRIPTION>Revised ECC for MinGW compiler.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.51/2</ISSUE>
+        <TITLE>Modification 3.0.51/2</TITLE>
+        <DESCRIPTION>Tested on 12.2.0 MinGW compiler.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.51/3</ISSUE>
+        <TITLE>Modification 3.0.51/3</TITLE>
+        <DESCRIPTION>VS variants changed to use C99 compatible options.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.51/4</ISSUE>
+        <TITLE>Modification 3.0.51/4</TITLE>
+        <DESCRIPTION>MCAL files updated and bug-fixed.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Removal">
+        <ISSUE>3.0.51/5</ISSUE>
+        <TITLE>Modification 3.0.51/5</TITLE>
+        <DESCRIPTION>VECU run-time license checks are no longer performed for standard VECUs.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.50">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.50/1</ISSUE>
+        <TITLE>Modification 3.0.50/1</TITLE>
+        <DESCRIPTION>Added in experimental support for CPFlex prototype</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.50/2</ISSUE>
+        <TITLE>Modification 3.0.50/2</TITLE>
+        <DESCRIPTION>Added support for 64-bit types</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.50/3</ISSUE>
+        <TITLE>Modification 3.0.50/3</TITLE>
+        <DESCRIPTION>The wording in the OSS Attributions Document has been updated.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.50/4</ISSUE>
+        <TITLE>Modification 3.0.50/4</TITLE>
+        <DESCRIPTION>A correction was made in the C# Comms library example code to avoid a possible buffer overrun</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.50/5</ISSUE>
+        <TITLE>Modification 3.0.50/5</TITLE>
+        <DESCRIPTION>Tested on later version of MinGW (12.2.0). Refined the implementation of code in WaitEvent accordingly.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.50/6</ISSUE>
+        <TITLE>Modification 3.0.50/6</TITLE>
+        <DESCRIPTION>Ensures that the CODE_FAST and VECTORS memory sections get reported in the BSWMD report.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.50/7</ISSUE>
+        <TITLE>Modification 3.0.50/7</TITLE>
+        <DESCRIPTION>Improved error reporting for invalid MemoryMappingCodeLocation values in the ARXML.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.49">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.49/1</ISSUE>
+        <TITLE>Modification 3.0.49/1</TITLE>
+        <DESCRIPTION>Reduce compiler warnings for Visual Studio 2022</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.48">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.48/1</ISSUE>
+        <TITLE>Modification 3.0.48/1</TITLE>
+        <DESCRIPTION>Target option &apos;Enable stack repositioning&apos; is supported for Visual Studio 2022</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.47">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.47/1</ISSUE>
+        <TITLE>Modification 3.0.47/1</TITLE>
+        <DESCRIPTION>The InitializeDevices() function is declared with C++ linkage.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.47/2</ISSUE>
+        <TITLE>Modification 3.0.47/2</TITLE>
+        <DESCRIPTION>VRTA MCAL DLLs added back to installation.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.47/3</ISSUE>
+        <TITLE>Modification 3.0.47/3</TITLE>
+        <DESCRIPTION>Added support for Visual Studio 2022</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Removal">
+        <ISSUE>3.0.47/4</ISSUE>
+        <TITLE>Modification 3.0.47/4</TITLE>
+        <DESCRIPTION>Removed support for some older Visual Studio versions.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.46">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.46/1</ISSUE>
+        <TITLE>Modification 3.0.46/1</TITLE>
+        <DESCRIPTION>Rebuilt and tested for RTA-OS 6.2.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.46/2</ISSUE>
+        <TITLE>Modification 3.0.46/2</TITLE>
+        <DESCRIPTION>Added callbacks Os_Cbk_ChangingTrust and Os_Cbk_ChangedTrust.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.46/3</ISSUE>
+        <TITLE>Modification 3.0.46/3</TITLE>
+        <DESCRIPTION>Virtual Events hook code reworked to simplify TCP connections.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Removal">
+        <ISSUE>3.0.46/4</ISSUE>
+        <TITLE>Modification 3.0.46/4</TITLE>
+        <DESCRIPTION>Removed support for VS2005 and VS2008.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.45">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.45/1</ISSUE>
+        <TITLE>Modification 3.0.45/1</TITLE>
+        <DESCRIPTION>Rebuilt and tested for RTA-OS 6.1.3</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.44">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.44/1</ISSUE>
+        <TITLE>Modification 3.0.44/1</TITLE>
+        <DESCRIPTION>VRTA communications are more resilient when used on a machine using a VPN.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.43">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.43/1</ISSUE>
+        <TITLE>Modification 3.0.43/1</TITLE>
+        <DESCRIPTION>Rebuilt for RTA-OS 6.1.1, 64-bit option.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.42">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.42/1</ISSUE>
+        <TITLE>Modification 3.0.42/1</TITLE>
+        <DESCRIPTION>Floating point exceptions are disabled in MinGW builds to match the VS behavior.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.42/2</ISSUE>
+        <TITLE>Modification 3.0.42/2</TITLE>
+        <DESCRIPTION>Improve reliability when using break points in gdb debugger.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.41">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.41/1</ISSUE>
+        <TITLE>Modification 3.0.41/1</TITLE>
+        <DESCRIPTION>Updated vrtaServer.exe to support the VRTA-ux WSL target.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.41/2</ISSUE>
+        <TITLE>Modification 3.0.41/2</TITLE>
+        <DESCRIPTION>Added vrtaServerCli.exe as an alternative CLI version of vrtaServer.exe.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.40">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.40/1</ISSUE>
+        <TITLE>Modification 3.0.40/1</TITLE>
+        <DESCRIPTION>Updated for full compatibility with RTA-OS 6 and below.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.39">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.39/1</ISSUE>
+        <TITLE>Modification 3.0.39/1</TITLE>
+        <DESCRIPTION>Tested support for Visual Studio 2019.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.38">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.38/1</ISSUE>
+        <TITLE>Modification 3.0.38/1</TITLE>
+        <DESCRIPTION>Improved compatibility with RTA-OS 5.6.4</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.38/2</ISSUE>
+        <TITLE>Modification 3.0.38/2</TITLE>
+        <DESCRIPTION>Small performance updates</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.37">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.37/1</ISSUE>
+        <TITLE>Modification 3.0.37/1</TITLE>
+        <DESCRIPTION>Tested support for Visual Studio 2017.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.37/2</ISSUE>
+        <TITLE>Modification 3.0.37/2</TITLE>
+        <DESCRIPTION>Improved multicore direct-ticked performance - especially on Windows 10</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.37/3</ISSUE>
+        <TITLE>Modification 3.0.37/3</TITLE>
+        <DESCRIPTION>Optimize MinGW Os_SetJmp code</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.37/4</ISSUE>
+        <TITLE>Modification 3.0.37/4</TITLE>
+        <DESCRIPTION>Ensure cross-core interrupt is unmasked by default during initialization</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.36">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.36/1</ISSUE>
+        <TITLE>Modification 3.0.36/1</TITLE>
+        <DESCRIPTION>Supports MCAL version 1.0.42 (Lin)</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.35">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.35/1</ISSUE>
+        <TITLE>Modification 3.0.35/1</TITLE>
+        <DESCRIPTION>Added Os_Disable_ macros in Os_DisableInterrupts.h to support disabling of specific interrupts</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.35/2</ISSUE>
+        <TITLE>Modification 3.0.35/2</TITLE>
+        <DESCRIPTION>Added Os_Enable_ macros in Os_DisableInterrupts.h to support enabling of specific interrupts</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.35/3</ISSUE>
+        <TITLE>Modification 3.0.35/3</TITLE>
+        <DESCRIPTION>Added Os_DisableAllConfiguredInterrupts macro in Os_DisableInterrupts.h to support disabling all interrupts</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.35/4</ISSUE>
+        <TITLE>Modification 3.0.35/4</TITLE>
+        <DESCRIPTION>Added Os_EnableAllConfiguredInterrupts macro in Os_DisableInterrupts.h to support enabling all interrupts</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.34">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.34/1</ISSUE>
+        <TITLE>Modification 3.0.34/1</TITLE>
+        <DESCRIPTION>Modified VS2012 compilation option to account for differences in warning messages.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.34/2</ISSUE>
+        <TITLE>Modification 3.0.34/2</TITLE>
+        <DESCRIPTION>Improves calculations for size reports.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.33">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.33/1</ISSUE>
+        <TITLE>Modification 3.0.33/1</TITLE>
+        <DESCRIPTION>Supports RTA-OS 5.6 features for enabling and disabling interrupt sources.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.33/2</ISSUE>
+        <TITLE>Modification 3.0.33/2</TITLE>
+        <DESCRIPTION>Added option &apos;Instrument MinGW for Code Coverage&apos; to support GCOV measurements.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.32">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.32/1</ISSUE>
+        <TITLE>Modification 3.0.32/1</TITLE>
+        <DESCRIPTION>The DirectTick action on the SystemClock has been updated to work with multi-core applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.31">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.31/1</ISSUE>
+        <TITLE>Modification 3.0.31/1</TITLE>
+        <DESCRIPTION>A 2 second watchdog timeout is applied to the code that terminates the VECU to ensure that it does not freeze during the shutdown process.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.31/2</ISSUE>
+        <TITLE>Modification 3.0.31/2</TITLE>
+        <DESCRIPTION>The SystemClock device persists data across resets, to support resetting a VECU that is controlled via FMU.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.31/3</ISSUE>
+        <TITLE>Modification 3.0.31/3</TITLE>
+        <DESCRIPTION>Updated TrustedWithProtection support.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.31/4</ISSUE>
+        <TITLE>Modification 3.0.31/4</TITLE>
+        <DESCRIPTION>Eliminated a crash on exit for multicore applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.30">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.30/1</ISSUE>
+        <TITLE>Modification 3.0.30/1</TITLE>
+        <DESCRIPTION>Updated for RTA-OS 5.5.8.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.29">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.29/1</ISSUE>
+        <TITLE>Modification 3.0.29/1</TITLE>
+        <DESCRIPTION>Updated for RTA-OS 5.5.7, in particular TrustedWithProtection support.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.28">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.28/1</ISSUE>
+        <TITLE>Modification 3.0.28/1</TITLE>
+        <DESCRIPTION>Updated for RTA-OS 5.5.5, in particular MISRA C:2012 support.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.27">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.27/1</ISSUE>
+        <TITLE>Modification 3.0.27/1</TITLE>
+        <DESCRIPTION>vrtaServer can be told to load a VECU in a specific directory.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.27/2</ISSUE>
+        <TITLE>Modification 3.0.27/2</TITLE>
+        <DESCRIPTION>The support tools and communication libraries have been updated to support the new vrtaServer behavior.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.26">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.26/1</ISSUE>
+        <TITLE>Modification 3.0.26/1</TITLE>
+        <DESCRIPTION>Fix the interrupt enabling code in the sample applications.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.25">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.25/1</ISSUE>
+        <TITLE>Modification 3.0.25/1</TITLE>
+        <DESCRIPTION>Tested support for Visual Studio 2013 and 2015.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.25/2</ISSUE>
+        <TITLE>Modification 3.0.25/2</TITLE>
+        <DESCRIPTION>Fix a regression in the RTA_TRACE support code 3.0.24 that could cause an apparent slowdown in performance.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.24">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.24/1</ISSUE>
+        <TITLE>Modification 3.0.24/1</TITLE>
+        <DESCRIPTION>Adjustments to support RTA-OS 5.5.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.24/2</ISSUE>
+        <TITLE>Modification 3.0.24/2</TITLE>
+        <DESCRIPTION>Speculative (untested) support for Visual Studio 2013 and 2015.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.23">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.23/1</ISSUE>
+        <TITLE>Modification 3.0.23/1</TITLE>
+        <DESCRIPTION>Adjust header file to avoid compile error related to the memset function on some versions of MinGW.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.22">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.22/1</ISSUE>
+        <TITLE>Modification 3.0.22/1</TITLE>
+        <DESCRIPTION>Adjust gdb.bat to suit later versions of MinGW toolchain.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.21">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.21/1</ISSUE>
+        <TITLE>Modification 3.0.21/1</TITLE>
+        <DESCRIPTION>Additional SystemClock action to turn off low power mode between direct ticks.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.20">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.20/1</ISSUE>
+        <TITLE>Modification 3.0.20/1</TITLE>
+        <DESCRIPTION>Addition of shared memory communication mechanism for local VECUs (for FMU/S-Function).</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.19">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.19/1</ISSUE>
+        <TITLE>Modification 3.0.19/1</TITLE>
+        <DESCRIPTION>Performance tuning for FMU/S-Function.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.18">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.18/1</ISSUE>
+        <TITLE>Modification 3.0.18/1</TITLE>
+        <DESCRIPTION>VECU exits after reporting a run-time license failure. It also emits a file VECU_license_fail.txt.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.18/2</ISSUE>
+        <TITLE>Modification 3.0.18/2</TITLE>
+        <DESCRIPTION>vrtaServer status dialog shows the name of failing run-time licenses.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.17">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.17/1</ISSUE>
+        <TITLE>Modification 3.0.17/1</TITLE>
+        <DESCRIPTION>VECU run-time license feature supports logical operations || and \&amp;amp;\&amp;amp;</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.16">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.16/1</ISSUE>
+        <TITLE>Modification 3.0.16/1</TITLE>
+        <DESCRIPTION>Low power mode between direct ticks.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.16/2</ISSUE>
+        <TITLE>Modification 3.0.16/2</TITLE>
+        <DESCRIPTION>Freeze OS between direct ticks works again.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.15">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.15/1</ISSUE>
+        <TITLE>Modification 3.0.15/1</TITLE>
+        <DESCRIPTION>New target option to specify the VECU run-time license feature name.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.14">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.14/1</ISSUE>
+        <TITLE>Modification 3.0.14/1</TITLE>
+        <DESCRIPTION>Added NULL pointer protection for VirtualDevice::UnpackData code.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.14/2</ISSUE>
+        <TITLE>Modification 3.0.14/2</TITLE>
+        <DESCRIPTION>Remove double definition of VirtualDevice::SetValue (caused link-time error).</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.13">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.13/1</ISSUE>
+        <TITLE>Modification 3.0.13/1</TITLE>
+        <DESCRIPTION>The vrtaYield() API has been added to replace most calls to vrtaIsIdle(). vrtaIsIdle() must only be used inside Os_Cbk_Idle().</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.11">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.11/1</ISSUE>
+        <TITLE>Modification 3.0.11/1</TITLE>
+        <DESCRIPTION>Fixes issue with FixedInterval strategy on SystemClock where it could stop ticking.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.10">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.10/1</ISSUE>
+        <TITLE>Modification 3.0.10/1</TITLE>
+        <DESCRIPTION>Upissued for release with RTA-OS 5.3.0</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.10/2</ISSUE>
+        <TITLE>Modification 3.0.10/2</TITLE>
+        <DESCRIPTION>Added preliminary MCAL generation support</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.5">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.5/1</ISSUE>
+        <TITLE>Modification 3.0.5/1</TITLE>
+        <DESCRIPTION>Support Visual Studio 2012</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.5/2</ISSUE>
+        <TITLE>Modification 3.0.5/2</TITLE>
+        <DESCRIPTION>Support MinGW 4.7.2</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.4">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.4/1</ISSUE>
+        <TITLE>Modification 3.0.4/1</TITLE>
+        <DESCRIPTION>Improve performance on Windows 7/64 bit</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.4/2</ISSUE>
+        <TITLE>Modification 3.0.4/2</TITLE>
+        <DESCRIPTION>Added poll method to trace device. (Interim solution)</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.3">
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.3/1</ISSUE>
+        <TITLE>Modification 3.0.3/1</TITLE>
+        <DESCRIPTION>Fixes MinGW builds that do a forced OS termination - the VECU now exits cleanly.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.3/2</ISSUE>
+        <TITLE>Modification 3.0.3/2</TITLE>
+        <DESCRIPTION>Supports more recent MinGW versions</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.3/3</ISSUE>
+        <TITLE>Modification 3.0.3/3</TITLE>
+        <DESCRIPTION>Supports operation on Windows 7/64 bit</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.3/4</ISSUE>
+        <TITLE>Modification 3.0.3/4</TITLE>
+        <DESCRIPTION>Includes the vrta.exe command-line tool</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.3/5</ISSUE>
+        <TITLE>Modification 3.0.3/5</TITLE>
+        <DESCRIPTION>VECU Guide updated</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Functional Improvement">
+        <ISSUE>3.0.3/6</ISSUE>
+        <TITLE>Modification 3.0.3/6</TITLE>
+        <DESCRIPTION>Code aligned with VRTA-ux</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.2/1</ISSUE>
+        <TITLE>Modification 3.0.2/1</TITLE>
+        <DESCRIPTION>The interrupt used for cross-core communication can be selected as a target option.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.1/1</ISSUE>
+        <TITLE>Modification 3.0.1/1</TITLE>
+        <DESCRIPTION>Further MultiCore work. Synchronizes code with RTA-OS core.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="3.0.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.0/1</ISSUE>
+        <TITLE>Modification 3.0.0/1</TITLE>
+        <DESCRIPTION>Preliminary MultiCore version. The number of cores can be specified as a target option. Requires RTA-OS 5.0. Interrupt 32 is reserved for cross-core activation (when needed).</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>3.0.0/2</ISSUE>
+        <TITLE>Modification 3.0.0/2</TITLE>
+        <DESCRIPTION>Experimental support for Windows 7 (32 and 64 bit).</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="2.0.4">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>2.0.4/1</ISSUE>
+        <TITLE>Modification 2.0.4/1</TITLE>
+        <DESCRIPTION>Synchronizes with RTA-OS 4.1. No change in functionality.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="2.0.3">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>2.0.3/1</ISSUE>
+        <TITLE>Modification 2.0.3/1</TITLE>
+        <DESCRIPTION>Synchronizes with RTA-OS 4.01 and AUTOSAR 4.0 APIs. No change in functionality.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="2.0.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>2.0.2/1</ISSUE>
+        <TITLE>Modification 2.0.2/1</TITLE>
+        <DESCRIPTION>Synchronizes with RTA-OS 4.0. No change in functionality.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="2.0.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>2.0.0/1</ISSUE>
+        <TITLE>Modification 2.0.0/1</TITLE>
+        <DESCRIPTION>Release.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="1.99.1">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>1.99.1/1</ISSUE>
+        <TITLE>Modification 1.99.1/1</TITLE>
+        <DESCRIPTION>Beta Release. SC1/2/3/4 implementation complete.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="1.99.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>1.99.0/1</ISSUE>
+        <TITLE>Modification 1.99.0/1</TITLE>
+        <DESCRIPTION>Early Access Release. SC1/2/3/4 implementation essentially complete. See Known Issues.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 85689</ISSUE>
+        <TITLE>OS_START_SEC_SEC_VECTORS</TITLE>
+        <DESCRIPTION>The interrupt vectors were declared with a MemMap OS_START_SEC_SEC_VECTORS name rather than OS_START_SEC_VECTORS</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="1.0.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>1.0.0/1</ISSUE>
+        <TITLE>Modification 1.0.0/1</TITLE>
+        <DESCRIPTION>Release version 1</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>EHI 84745</ISSUE>
+        <TITLE>vrtaServer on Vista</TITLE>
+        <DESCRIPTION>vrtaServer can run as a service under Vista, but must be installed by an administrator.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="0.9.2">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>0.9.2/1</ISSUE>
+        <TITLE>Modification 0.9.2/1</TITLE>
+        <DESCRIPTION>Second beta release</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+    <VERSION value="0.9.0">
+      <RELEASE-NOTE classification="New Feature">
+        <ISSUE>0.9.0/1</ISSUE>
+        <TITLE>Modification 0.9.0/1</TITLE>
+        <DESCRIPTION>Initial beta release</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+  </COMPONENT>
+</RELEASE-NOTES>
+
