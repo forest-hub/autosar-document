@@ -1,0 +1,196 @@
+{
+  "spdxVersion" : "SPDX-2.3",
+  "dataLicense" : "CC0-1.0",
+  "SPDXID" : "SPDXRef-DOCUMENT",
+  "name" : "SBOM for ETAS RTA-OS V12.6.0",
+  "documentNamespace" : "http://spdx.org/spdxdocs/spdx-RTA-OS-12.6.0",
+  "documentDescribes" : [ "SPDXRef-ETAS-RTA-OS-12.6.0" ],
+  "creationInfo" : {
+    "licenseListVersion" : "3.17",
+    "creators" : [ "Organization: ETAS-GmbH" ],
+    "created" : "2025-01-23T12:10:21Z",
+    "comment" : "Created from RTA-OS V12.6.0"
+  },
+  "packages" : [
+    {
+    "name" : "RTAOSGen.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND Ruby AND MIT)",
+    "licenseDeclared" : "(LicenseRef-1)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:rtaosgen:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-RTAOSGen-12.6.0"
+    },
+    {
+    "name" : "RTAOSCfg.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND LicenseRef-Basic-Proprietary-Commercial-License AND MIT)",
+    "licenseDeclared" : "(LicenseRef-1 AND LicenseRef-Basic-Proprietary-Commercial-License)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:rtaoscfg:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-RTAOSCfg-12.6.0"
+    },
+    {
+    "name" : "Auth.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND MIT AND Apache-2.0)",
+    "licenseDeclared" : "(LicenseRef-1)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:auth:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-Auth-12.6.0"
+    },
+    {
+    "name" : "Bake.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND Ruby AND MIT)",
+    "licenseDeclared" : "(LicenseRef-1)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:bake:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-Bake-12.6.0"
+    },
+    {
+    "name" : "MCALGen.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND MIT)",
+    "licenseDeclared" : "(LicenseRef-1)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:mcalgen:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-MCALGen-12.6.0"
+    },
+    {
+    "name" : "RTAUtils.exe",
+    "versionInfo" : "12.6.0",
+    "supplier" : "Organization: ETAS-GmbH",
+    "downloadLocation" : "https://www.etas.com/en/products/rta_os.php",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-1 AND Ruby AND MIT)",
+    "licenseDeclared" : "(LicenseRef-1)",
+    "copyrightText" : "Copyright ETAS GmbH",
+    "externalRefs" : [
+      {
+      "referenceCategory" : "SECURITY",
+      "referenceType" : "cpe23Type",
+      "referenceLocator" : "cpe:2.3:a:etas:rtautils:12.6.0:*:*:*:*:*:*:*"
+      }
+    ],
+    "SPDXID" : "SPDXRef-ETAS-RTAUtils-12.6.0"
+    },
+    {
+    "name" : "BouncyCastle.Cryptography",
+    "versionInfo" : "2.2.1",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-BouncyCastle.Cryptography"
+    },
+    {
+    "name" : "IronRubyEmbeddedApps",
+    "versionInfo" : "1.3.0.32687",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-IronRubyEmbeddedApps"
+    },
+    {
+    "name" : "MarkdownDeep",
+    "versionInfo" : "2011",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-MarkdownDeep"
+    },
+    {
+    "name" : "Rake",
+    "versionInfo" : "10.0.4",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-Rake"
+    },
+    {
+    "name" : "Serfs",
+    "versionInfo" : "1.3.0.32684",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-Serfs"
+    },
+    {
+    "name" : "yamldotnet",
+    "versionInfo" : "3.7.0",
+    "downloadLocation" : "NONE",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NONE",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-yamldotnet"
+    },
+    {
+    "name" : ".NET8",
+    "versionInfo" : "8.0.12",
+    "downloadLocation" : "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-8.0.12-windows-x64-installer",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(MIT)",
+    "licenseDeclared" : "NONE",
+    "SPDXID" : "SPDXRef-net8"
+    }
+  ],
+  "hasExtractedLicensingInfos" : [
+    {
+    "licenseId" : "LicenseRef-2",
+    "extractedText" : "Basic-Proprietary-Commercial-License",
+    "comment" : "Basic-Proprietary-Commercial-License."
+    }
+  ]
+}
+
+

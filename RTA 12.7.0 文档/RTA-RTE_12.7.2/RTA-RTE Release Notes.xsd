@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Types-->
+    <xs:simpleType name="deliverable_T">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RTA-RTE"/>
+            <xs:enumeration value="RTA-OS"/>
+            <xs:enumeration value="RTA-OS-TARGET"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="version_T">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="classification_T">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Functional Improvement"/>
+            <xs:enumeration value="New Feature"/>
+            <xs:enumeration value="Issue Fix"/>
+            <xs:enumeration value="Non-Functional Improvement"/>
+            <xs:enumeration value="Removal"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Layout-->
+    <xs:element name="RELEASE-NOTES">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="COMPONENT" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="VERSION" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="RELEASE-NOTE" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ISSUE" type="xs:string" />
+                                                    <xs:element name="TITLE" type="xs:string" />
+                                                    <xs:element name="DESCRIPTION" type="xs:string" />
+                                                </xs:sequence>
+                                                <xs:attribute name="classification" type="classification_T" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="value" type="version_T" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="deliverable" type="deliverable_T" use="required"/>
+                        <xs:attribute name="name" type="xs:string" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+            <xs:attribute name="schemaVersion" type="xs:decimal" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

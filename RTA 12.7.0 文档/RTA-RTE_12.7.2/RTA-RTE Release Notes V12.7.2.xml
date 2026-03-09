@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RELEASE-NOTES schemaVersion="1.0">
+  <COMPONENT deliverable="RTA-RTE">
+    <VERSION value="12.7.2">
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>RTE-18958</ISSUE>
+        <TITLE>Optimize resource locking for one Task simple S/R configs</TITLE>
+        <DESCRIPTION>The behavior of RTE-18341 has been extended to cover scenarios where a participating RunnableEntity has both read and write access. Additionally the consistency in resource protection for immaterial configuration changes has been improved.</DESCRIPTION>
+      </RELEASE-NOTE>
+      <RELEASE-NOTE classification="Issue Fix">
+        <ISSUE>RTE-19675</ISSUE>
+        <TITLE>Set the update flag in resource protection with tranformation</TITLE>
+        <DESCRIPTION>RTA-RTE now sets the update flag(s) in the same concurrency protection as the global data is copied into the RTE managed global buffer in COM/LdCom callbacks where transformation is configured.</DESCRIPTION>
+      </RELEASE-NOTE>
+    </VERSION>
+
+    <!--<VERSION></VERSION>-->
+
+  </COMPONENT>
+</RELEASE-NOTES>

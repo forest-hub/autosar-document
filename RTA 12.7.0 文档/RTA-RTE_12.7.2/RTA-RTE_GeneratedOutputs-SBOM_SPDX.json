@@ -1,0 +1,61 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "name": "SPDX-Tools-v2.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "http://spdx.org/spdxdocs/spdx-ETAS-RTA-RTE",
+  "documentDescribes": [
+    "SPDXRef-ETAS-RTA-RTE-GeneratedOutputs"
+  ],
+  "creationInfo": {
+    "comment": "SBOM of generated code from ETAS-RTA-RTE",
+    "created": "2025-05-27T12:12:16Z",
+    "creators": [
+      "Organization: ETAS-GmbH"
+    ],
+    "licenseListVersion": "3.17"
+  },
+  "packages": [
+    {
+      "name": "RTA-RTE-GeneratedOutputs",
+      "SPDXID": "SPDXRef-ETAS-RTA-RTE-GeneratedOutputs",
+      "versionInfo": "12.7.2",
+      "filesAnalyzed": false,
+      "downloadLocation": "NONE",
+      "licenseConcluded": "(LicenseRef-1)",
+      "licenseDeclared": "(LicenseRef-1)"
+    },
+    {
+      "name": "RTEGen",
+      "SPDXID": "SPDXRef-ETAS-RTA-RTE",
+      "versionInfo": "12.7.2",
+      "supplier": "Organization: ETAS-GmbH",
+      "downloadLocation": "https://www.etas.com/en/products/download_center.php",
+      "filesAnalyzed": false,
+      "licenseConcluded": "(LicenseRef-1)",
+      "licenseDeclared": "(LicenseRef-1)",
+      "copyrightText": "Copyright ETAS GmbH 2025",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceLocator": "cpe:2.3:a:etas:rta_rte:12.7.2:*:*:*:*:*:*:*",
+          "referenceType": "cpe23Type"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-ETAS-RTA-RTE-GeneratedOutputs",
+      "relatedSpdxElement": "SPDXRef-ETAS-RTA-RTE",
+      "relationshipType": "GENERATED_FROM"
+    }
+  ],
+  "hasExtractedLicensingInfos": [
+    {
+      "licenseId": "LicenseRef-1",
+      "extractedText": "End User License Agreement\n\nRTA-RTE \n\nARTICLE I. GRANT OF LICENSE\nSubject to the provisions contained herein, ETAS GmbH, Borsigstrasse 24, 70469 Stuttgart, Germany, or an affiliate of ETAS GmbH (hereinafter collectively referred to as \"Licensor\"), either directly or through a designated ETAS reseller, hereby grants to the Licensee a non-exclusive, timely unlimited, non-transferable, non-sublicensable, revocable right to use Software RTA-RTE and supporting utilities(hereinafter referred to as \"Software\"), a proprietary software tool, and any materials provided to the Licensee by Licensor in connection with the license grant, such as documentation and demonstration material.\nLicensee shall be entitled to make archival and/or backup copies of the Software.\nARTICLE II. RESTRICTIONS ON USE\nLicensee shall - except as expressly agreed between the Parties in writing or as permitted in this Agreement - not, (i) use or copy the Software; (ii) modify, adapt, translate, reverse engineer, decompile, disassemble the Software or create derivative works thereof; (iii) rent, lease, sublicense, transfer, or distribute the Software or grant any rights to use it. Depending on the license model (e.g. machine-based, user named, floating) agreed upon between the parties in the individual case, usage may be restricted to a certain number of simultaneous executions of the Software.\nARTICLE III. PROPRIETARY RIGHTS OF LICENSOR\nLicensor retains all rights, title and interest in the Software, including any modification, updates, improvements, enhancements or extraction thereof. The Licensee acknowledges that Licensor retains exclusive ownership and title in the trademarks represented by its company name and logo as well as product names. The Licensee will not remove, delete or modify any copyright or other proprietary notice or any other attributions from the Software.\nARTICLE IV. LIMITED WARRANTY POLICY, LIMITED LIABILITY\nTHE USE OF SOFTWARE SHALL BE SUBJECT TO THE WARRANTY AND LIABILITY PROVISIONS SET FORTH IN THE APPLICABLE TERMS AND CONDITIONS OR AS AGREED UPON BETWEEN THE PARTIES.\nIF THE LICENSE GRANT IS PROVIDED FREE OF CHARGE, THE LICENSOR ASSUMES WARRANTY ONLY FOR DEFECTS AS TO QUALITY AND DEFECTS IN TITLE IF AND TO THE EXTENT THAT IT HAS MALICIOUSLY CONCEALED ANY SUCH DEFECT AS TO QUALITY OR IN TITLE. BEYOND THIS, THE LICENSOR, ITS LEGAL REPRESENTATIVES AND VICARIOUS AGENTS SHALL ONLY BE LIABLE FOR DAMAGES RESULTING FROM DELIBERATE OR GROSSLY NEGLIGENT MISCONDUCT OF THE LICENSOR. CLAIMS IN ACCORDANCE WITH APPLICABLE PRODUCT LIABILITY LAWS SHALL REMAIN UNAFFECTED.\nTHE LICENSOR DOES NOT ACCEPT LIABILITY FOR DAMAGES RESULTING FROM IMPROPER OPERATION (WHICH IS NOT IN ACCORDANCE WITH THE SOFTWARE SPECIFICATIONS) OR OPERATION IN A MANNER THAT IS CONTRARY TO THIS AGREEMENT. ANY RISK ARISING FROM THE USE OR PERFORMANCE OF THE SOFTWARE SHALL LIE WITH THE LICENSEE. THE LICENSEE SHALL BE RESPONSIBLE TO VERIFY AND SECURE ANY RESULTS OBTAINED FROM THE USE OF THE SOFTWARE, IN PARTICULAR WITH RESPECT TO ACCURACY, SAFETY AND SECURITY.\nARTICLE V. LICENSEE’S SUBMISSION\nThis Agreement does not obligate the Licensee to provide Licensor with materials, information, comments, suggestions or other communication regarding the Software. However, the Licensee agrees that any material, information, comments, suggestions or other communication the Licensee transmits or posts to Licensor (including but not limited to, submissions to Licensor’s 1st level support and/or other customer support websites or online portals) or provide to Licensor under this Agreement related to the features, functions, performance or use of the Software are deemed non-confidential and non-proprietary (\"Communications\"). Licensor will have no obligations with respect to the Communications.\nThe Licensee hereby grants to Licensor, its subsidiaries and affiliates, a non-exclusive, perpetual, irrevocable, royalty-free, worldwide license to copy, modify, create derivative works, publicly display, disclose, distribute, license and sublicense through multiple tiers of distribution and Licensees, incorporate and otherwise use the Communications and all data, images, sounds, text, and other things embodied therein, including derivative works thereto, for any and all commercial or non-commercial purposes.\nNothing in this Agreement will be construed as preventing Licensor from implementing independently-developed enhancements to Licensor’s own error diagnosis methodology to detect errors or defects in Licensor’s products discovered while reviewing Communications or to implement bug fixes or enhancements in Licensor’s products. The foregoing may include the right to include Communications in regression test suites.\nARTICLE VI. THIRD PARTY PROGRAMS\nThe SOFTWARE may contain third party programs or materials that are governed by third parties’ license terms, including without limitation, open source software. Comprehensive information about such third party programs or materials as well as any applicable license terms may be found in the Open Source Software Attributions document, which is part of the Software delivery. By installing and using the Software or any part thereof, the Licensee accepts any applicable third party license terms.\nARTICLE VII. COMPLIANCE WITH LAW, EXPORT CONTROLS\nThe Licensee agrees to comply with all applicable export laws and restrictions and regulations of the European Union, the United States or any other relevant foreign agency or authority. The Licensee agrees not to export, or allow the export or re-export of the Software, in violation of any such restrictions, laws or regulations. The Licensee represents and warrants that it is not located in, under the control of, or a national or resident of any restricted country and that it is not listed on any EU or U.S. Government list of prohibited or restricted parties.\nARTICLE VIII. MISCELLANEOUS\nIn the event any part of this Agreement is invalidated by court or legislative action of competent jurisdiction, the remainder of this Agreement shall remain in binding effect. This Agreement may only be changed by mutual written consent.\n"
+    }
+  ]
+}
+
